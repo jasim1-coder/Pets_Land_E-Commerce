@@ -1,0 +1,191 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f8f9fa; /* Light gray background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo and Brand */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;    border-radius: 25%;
+
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #343a40; /* Dark text */
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #FF6F61; /* Highlight color */
+  }
+  
+  /* Search Bar */
+  .search-form {
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    border: 2px solid #dee2e6;
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  
+  .search-form input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #495057;
+  }
+  
+  .search-form button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-form button:hover {
+    background-color: #e95a52;
+  }
+  
+  /* Navbar Right Section */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1rem;
+    margin-right: 25px;
+
+  }
+  
+  /* Links and Buttons */
+  .nav-icon, .logout-button, .login-button, .order-link {
+    font-weight: bold;
+    color: #343a40;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-icon:hover, .logout-button:hover, .login-button:hover, .order-link:hover {
+    background-color: #f1f1f1;
+    color: #FF6F61;
+  }
+/* Header CSS */
+.nav-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-length {
+    position: absolute;
+    top: -5px; /* Position the badge at the top-right corner */
+    right: -5px; /* Adjust to the right of the cart icon */
+    background-color: red; /* Background color */
+    color: white;
+    border-radius: 50%; /* Make it round */
+    width: 20px; /* Width of the circle */
+    height: 20px; /* Height of the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Font size for the count */
+  }
+  
+  .cart-length span {
+    font-weight: bold;
+  }
+  
+  
+  .order-link {
+    background-color: #FF6F61;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+  }
+  
+  .order-link:hover {
+    background-color: #e95a52;
+  }
+  
+  /* User Name */
+  .user-name {
+    display: inline;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 10px 20px;
+    }
+  
+    .navbar-center {
+      margin: 10px 0;
+      max-width: 90%;
+    }
+  
+    .navbar-right {
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-center {
+      margin: 10px 0;
+      max-width: 100%;
+    }
+  
+    .navbar-right {
+      gap: 10px;
+    }
+  
+    .search-form input {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  
+    .search-form button {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  
+    .nav-icon, .logout-button, .login-button, .order-link {
+      font-size: 0.9rem;
+      padding: 6px 10px;
+    }
+  }
+  
