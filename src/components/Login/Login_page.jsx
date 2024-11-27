@@ -5,6 +5,7 @@ import axios from 'axios';
 import './Login_Page.css';
 import * as Yup from 'yup';
 import { CartContext } from '../../context/CartContext';
+import toast from 'react-hot-toast';
 
 const initialValues = {
   email: '',
@@ -18,29 +19,48 @@ const validationSchema = Yup.object({
 
 function Login_Page() {
   const navigate = useNavigate();
-  const {login,setLogin} = useContext(CartContext)
+  const { login, setLogin } = useContext(CartContext);
 
   const onSubmit = async (values, { setSubmitting, setFieldError }) => {
     try {
       const response = await axios.get('http://localhost:3000/users');
       const users = response.data;
 
+      // Admin Login
+      const admin = users.find(
+        (user) =>
+          user.email.toLowerCase() === values.email.toLowerCase() && user.role === 'admin'
+      );
+
+      if (admin) {
+        localStorage.setItem('id', admin.id);
+        localStorage.setItem('name', admin.name);
+        toast.success('Admin Login successful!');
+        navigate('/admin');
+        setLogin(true)
+        return;
+      }
+
+      // Regular User Login
       const matchedUser = users.find(
-        (user) => user.email === values.email && user.password === values.password
+        (user) =>
+          user.email.toLowerCase() === values.email.toLowerCase() &&
+          user.password === values.password && user.blocked === false
       );
 
       if (matchedUser) {
         localStorage.setItem('id', matchedUser.id);
         localStorage.setItem('name', matchedUser.name);
-        setLogin(true)
-        alert('Login successful!');
+        setLogin(true);
+        toast.success('Login successful!');
         navigate('/');
       } else {
         setFieldError('email', 'Invalid email or password');
+        setFieldError('password', 'Invalid email or password');
       }
     } catch (error) {
       console.error('Error during login:', error);
-      alert('Server error. Please try again later.');
+      toast.error('Server error. Please try again later.');
     } finally {
       setSubmitting(false);
     }
@@ -55,7 +75,6 @@ function Login_Page() {
       {({ isSubmitting }) => (
         <div className="Overall">
           <Form className="form-container">
-
             <div className="form-control">
               <label htmlFor="email">E-mail</label>
               <Field type="email" id="email" name="email" />

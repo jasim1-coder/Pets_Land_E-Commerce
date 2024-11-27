@@ -92,6 +92,29 @@
 .product-info p {
   margin: 10px 0;
 }
+/* Add these styles to your Product_detail.css file */
+
+.product-info .old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+}
+
+.product-info .stock,
+.product-info .category,
+.product-info .ingredients {
+  margin-top: 10px;
+}
+
+.product-info .ingredients li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.product-info .ingredients {
+  padding-left: 15px;
+}
+
 
 @media (max-width: 768px) {
   .product-detail {

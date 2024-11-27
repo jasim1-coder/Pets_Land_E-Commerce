@@ -1,32 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Product_detail.css';
 import { CartContext } from '../../context/CartContext';
 
 const ProductDetail = () => {
-  const { addToCart } = useContext(CartContext); // Access addToCart function from context
-  const { id } = useParams(); // Get product ID from URL
+  const { addToCart } = useContext(CartContext); 
+  const { id } = useParams(); 
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch product details from backend
-    axios
-      .get(`http://localhost:3000/product/${id}`) // Replace with your actual backend URL
-      .then((response) => {
-        setProduct(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching product details:', error);
-        setLoading(false);
-      });
+    const fetchProduct = async () => {
+      const response = await axios.get(`http://localhost:3000/product/${id}`);
+      setProduct(response.data);
+    };
+    fetchProduct();
   }, [id]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   if (!product) {
     return <div>Product not found</div>;
@@ -35,19 +24,24 @@ const ProductDetail = () => {
   return (
     <div className="product-detail">
       <div className="product-detail-container">
-        <img src={product.image} alt={product.title} />
+        <img src={product.image} alt={product.name} />
         <div className="product-info">
-          <h2>{product.title}</h2>
+          <h2>{product.name}</h2>
           <p className="description">{product.description}</p>
           <p className="price">Price: ₹{product.price}</p>
-          {product.discount && (
-            <p className="discount">Discount: {product.discount}%</p>
-          )}
-          <p className="brand">Brand: {product.brand}</p>
-          <button 
-            className="add-to-cart-button" 
-            onClick={() => addToCart(product)}
-          >
+          {product.oldPrice && <p className="old-price">Old Price: ₹{product.oldPrice}</p>}
+          {product.discount && (<p className="discount">Discount: {product.discount}%</p>)}
+          <p className="category">Category: {product.category}</p>
+          <p className="seller">Seller: {product.seller}</p>
+          
+          <h3>Ingredients:</h3>
+          <ul className="ingredients">
+            {product.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+
+          <button className="add-to-cart-button" onClick={() => addToCart(product)}>
             Add to Cart
           </button>
         </div>

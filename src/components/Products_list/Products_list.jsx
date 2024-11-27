@@ -1,44 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import "./Products_list.css"
+import "./Products_list.css";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
-const ProductList = () => {
+const ProductList = ({ selectedCategory}) => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {search} = useContext(CartContext)
 
   useEffect(() => {
-    // Fetch data from the backend (API)
-    axios
-      .get("http://localhost:3000/product") // Replace with your backend URL if needed
-      .then((response) => {
-        setProducts(response.data); // Save products to state
-        setLoading(false); // Stop loading spinner
-      })
-      .catch((error) => {
+    const fetchProd = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/product");
+        setProducts(response.data);
+      } catch (error) {
         console.error("Error fetching products", error);
-        setLoading(false); // Stop loading spinner in case of an error
-      });
+      }
+    };
+  
+    fetchProd();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
+  const filteredProducts = products.filter((product) => {
+    const matchedCategory = selectedCategory ? product.category === selectedCategory : true ;
+    const matchedSearch =  search ? product.name.toLowerCase().includes(search.toLowerCase()) : true;
+    return matchedCategory && matchedSearch;
+  })
   return (
     <div className="product-list">
-      {products.map((product) => (
+        {filteredProducts.length === 0 ? (
+        <p>No products found in this category.</p>
+      ) : (filteredProducts.map((product) => (
         <div key={product.id} className="product-card">
           <Link to={`/products/${product.id}`}>
-            <img className="imagess" src={product.image} alt={product.title} />
+            <img className="imagess" src={product.image} alt={product.name} />
           </Link>
-          <h3>{product.title}</h3>
+          <h3>{product.name}</h3>
           <p>{product.description}</p>
           <p>Price: ₹{product.price}</p>
-          <p>Discount: {product.discount}%</p>
-          <p>Brand: {product.brand}</p>
+          <p>Seller: {product.seller}</p>
         </div>
-      ))}
+      ))
+    )}
     </div>
   );
 };

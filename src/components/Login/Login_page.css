@@ -1,8 +1,7 @@
-/* General Styling */
 .Overall {
     display: flex;
-    justify-content: flex-end; /* Align container to the right */
-    align-items: center; /* Center vertically */
+    justify-content: flex-end; 
+    align-items: center; 
     height: 100vh;
     background: url('https://www.shutterstock.com/image-photo/portrait-cat-dog-front-bright-600nw-1927527212.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -11,19 +10,17 @@
     position: relative;
   }
   
-  /* Form Container */
   .form-container {
-    background: rgba(255, 255, 255, 0.95); /* White theme with slight transparency */
+    background: rgba(255, 255, 255, 0.95); 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
     text-align: center;
-    margin-right: 5%; /* Space from the right edge */
+    margin-right: 5%; 
   }
   
-  /* Logo Section Inside Container */
   .form-container .logo {
     margin-bottom: 20px;
   }
@@ -35,7 +32,6 @@
     margin: 0 auto;
   }
   
-  /* Input Fields */
   .form-control {
     margin-bottom: 15px;
     text-align: left; /* Align labels to the left */
@@ -95,7 +91,6 @@
     background-color: #218838;
   }
   
-  /* Error Message */
   .error {
     color: #ff0000;
     font-size: 12px;
@@ -104,7 +99,6 @@
     margin-bottom: 10px;
   }
   
-  /* Responsive Styling */
   @media (max-width: 768px) {
     .form-container {
       margin-right: 0;

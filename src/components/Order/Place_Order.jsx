@@ -5,8 +5,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Place_Order.css';
 import { CartContext } from '../../context/CartContext';
+import toast from 'react-hot-toast';
 
-// Form validation schema
 const validationSchema = Yup.object({
   name: Yup.string().required('Full name is required'),
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -15,7 +15,9 @@ const validationSchema = Yup.object({
   city: Yup.string().required('City is required'),
   state: Yup.string().required('State is required'),
   postalCode: Yup.string().required('Postal code is required'),
-  paymentMethod: Yup.string().oneOf(['creditCard', 'paypal'], 'Please select a payment method').required('Payment method is required'),
+  paymentMethod: Yup.string()
+    .oneOf(['creditCard', 'paypal'], 'Please select a payment method')
+    .required('Payment method is required'),
 });
 
 const initialValues = {
@@ -26,7 +28,7 @@ const initialValues = {
   city: '',
   state: '',
   postalCode: '',
-  paymentMethod: 'creditCard',
+  paymentMethod: '',
 };
 
 function PlaceOrderPage() {
@@ -35,67 +37,82 @@ function PlaceOrderPage() {
   const [loading, setLoading] = useState(false);
 
   const placeOrder = async (address, paymentMethod) => {
-    const userId = localStorage.getItem("id");
-
+    const userId = localStorage.getItem('id');
     if (!userId) {
-      alert("Please log in to place an order.");
-      window.location.href = "/login";
+      toast.error('User not logged in.');
       return;
     }
 
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:3000/users/${userId}`);
-      const user = response.data;
 
-      // Create the order object
+      // Fetch user data
+      const userResponse = await axios.get(`http://localhost:3000/users/${userId}`);
+      const user = userResponse.data;
+
+      // Create order object
       const order = {
-        orderId: Date.now(), // Unique order ID based on the timestamp
-        timestamp: new Date().toISOString(), // Date and time when the order was placed
-        address, // Address from the form
-        paymentMethod, // Payment method selected by the user (e.g., creditCard, paypal)
+        orderId: Date.now(),
+        userId: userId,
+        usrName:user.name,
+        timestamp: new Date().toISOString(),
+        address,
+        paymentMethod,
         items: cart.map(item => ({
           id: item.id,
           image: item.image,
-          name: item.title,
+          name: item.name,
           quantity: item.quantity,
           price: item.price,
-          total: item.quantity * item.price, // Total price for each item
+          total: item.quantity * item.price,
         })),
-        totalPrice: cart.reduce((total, item) => total + item.price * item.quantity, 0), // Total price of the order
+        totalPrice: cart.reduce((total, item) => total + item.price * item.quantity, 0),
       };
 
-      // Add the order to the user's order history
-      const updatedOrders = [...user.order, order];
+      // Add order to user's `Orders`
+      const updatedUserOrders = [...user.order, order];
+      await axios.patch(`http://localhost:3000/users/${userId}`, { orders: updatedUserOrders });
 
-      // Clear the cart after placing the order
-      const updatedCart = [];
+      // Add order to global `Orders`
+      // const ordersResponse = await axios.get('http://localhost:3000/Orders');
+      // const globalOrders = ordersResponse.data;
 
-      // Update the user's orders and cart on the server
-      await axios.patch(`http://localhost:3000/users/${userId}`, {
-        cart: updatedCart,
-        order: updatedOrders,
-      });
+      // const updatedGlobalOrders = [...globalOrders, order];
+      await axios.post('http://localhost:3000/Orders', order);
 
-      // Update the local cart state
-      setCart(updatedCart);
+      // Update product stock
+      await Promise.all(
+        cart.map(async item => {
+          const productResponse = await axios.get(`http://localhost:3000/product/${item.id}`);
+          const product = productResponse.data;
 
-      alert("Order placed successfully!");
-      navigate("/Order_Success");
+          const updatedProduct = {
+            ...product,
+            stock: product.stock - item.quantity, // Reduce stock
+          };
 
+          await axios.put(`http://localhost:3000/product/${item.id}`, updatedProduct);
+        })
+      );
+
+      // Clear the cart
+      await axios.patch(`http://localhost:3000/users/${userId}`, { cart: [] });
+      setCart([]);
+      toast.success('Order placed successfully!');
+      navigate('/Order_Success');
     } catch (error) {
-      console.error("Error placing order:", error);
-      alert("Failed to place order. Please try again.");
+      console.error('Error placing order:', error);
+      toast.error('Failed to place order. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleSubmit = (values) => {
-    placeOrder(values.street, values.paymentMethod);
+  const handleSubmit = values => {
+    const address = `${values.street}, ${values.city}, ${values.state}, ${values.postalCode}`;
+    placeOrder(address, values.paymentMethod);
   };
 
-  // Dynamic form fields
   const formFields = [
     { name: 'name', type: 'text', placeholder: 'Full Name' },
     { name: 'email', type: 'email', placeholder: 'Email Address' },
@@ -117,7 +134,7 @@ function PlaceOrderPage() {
         {({ values }) => (
           <Form className="place-order-form">
             <h3>Address Details</h3>
-            {formFields.map((field) => (
+            {formFields.map(field => (
               <div key={field.name} className="form-field">
                 <Field
                   type={field.type}
@@ -128,7 +145,6 @@ function PlaceOrderPage() {
                 <ErrorMessage name={field.name} component="div" className="error-message" />
               </div>
             ))}
-
             <h3>Payment Method</h3>
             <div className="payment-methods">
               <label>
@@ -151,7 +167,6 @@ function PlaceOrderPage() {
               </label>
               <ErrorMessage name="paymentMethod" component="div" className="error-message" />
             </div>
-
             <button type="submit" className="place-order-submit-btn" disabled={loading}>
               {loading ? 'Placing Order...' : 'Confirm Order'}
             </button>

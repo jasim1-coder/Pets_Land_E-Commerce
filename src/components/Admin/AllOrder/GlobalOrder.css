@@ -1,0 +1,56 @@
+/* GlobalOrders.css */
+.card-body{
+    width: 100%;
+}.card-order {
+    margin-bottom: 20px;
+  }
+  
+  .card-order .card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .card-order .order-details {
+    margin-top: 10px;
+  }
+  
+  .card-order .order-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .card-order .order-item img {
+    max-width: 80px;
+    margin-right: 15px;
+  }
+  
+  .card-order .order-item-details {
+    flex: 1;
+  }
+  
+  .card-order .order-item-details p {
+    margin-bottom: 5px;
+  }
+  
+  .card-order .order-price {
+    font-weight: bold;
+  }
+  
+  .card-order .order-footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .card-order .btn-close {
+    margin-left: 10px;
+  }
+  
+  /* Styling for the global orders container */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
