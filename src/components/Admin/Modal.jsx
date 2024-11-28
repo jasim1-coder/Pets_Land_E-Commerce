@@ -4,7 +4,10 @@ import "./admin.css";
 const Modal = ({ modalType,productData, setProductData, onSave, onClose }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if(name === "ingredients"){
+    if(["price", "oldPrice", "stock"].includes(name)){
+      setProductData((prev) => ({...prev, [name]: parseInt(value)}))
+    }
+    else if(name === "ingredients"){
         setProductData((prev) => ({...prev, [name]: value.split(",").map((item) => item.trim())}))
     }else{
     setProductData((prev) => ({ ...prev, [name]: value }));

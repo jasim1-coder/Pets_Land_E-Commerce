@@ -45,15 +45,19 @@ function Login_Page() {
       const matchedUser = users.find(
         (user) =>
           user.email.toLowerCase() === values.email.toLowerCase() &&
-          user.password === values.password && user.blocked === false
+          user.password === values.password 
       );
 
       if (matchedUser) {
-        localStorage.setItem('id', matchedUser.id);
+        if(matchedUser.blocked){
+          toast.error('User blocked by admin');
+        }
+        else{
+          localStorage.setItem('id', matchedUser.id);
         localStorage.setItem('name', matchedUser.name);
         setLogin(true);
         toast.success('Login successful!');
-        navigate('/');
+        navigate('/');}
       } else {
         setFieldError('email', 'Invalid email or password');
         setFieldError('password', 'Invalid email or password');

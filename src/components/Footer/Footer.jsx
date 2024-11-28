@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer className="footer bg-body-tertiary">
-      <div className="container">
+      <div className="container1">
         <div className="footer-section">
           <h5>About Pet's Land</h5>
           <p>Your one-stop shop for all your pet needs! Whether it’s for your feline friends or canine companions, we’ve got you covered.</p>

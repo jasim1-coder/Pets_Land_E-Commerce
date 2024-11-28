@@ -7,6 +7,7 @@
       "password": "admin123",
       "id": "36c8888",
       "cart": [],
+      "order": [],
       "blocked": false
     },
     {
@@ -15,88 +16,8 @@
       "email": "sabith@gmail.com",
       "password": "sabith123",
       "confirmPassword": "sabith123",
-      "cart": [
-        {
-          "id": "3",
-          "title": "Dog Leash",
-          "price": 1242,
-          "description": "Strong and durable leash for dogs.",
-          "discount": 5,
-          "image": "https://headsupfortails.com/cdn/shop/files/DSC_3922-Edit-2.jpg?v=1698399261&width=1946",
-          "brand": "PawTech",
-          "quantity": 1
-        }
-      ],
-      "order": [
-        {
-          "orderId": 1732004317823,
-          "timestamp": "2024-11-19T08:18:37.823Z",
-          "address": "vengara post ",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "5",
-              "image": "https://www.zezelife.com/wp-content/uploads/2023/04/1-1.jpg",
-              "name": "Cat Tree",
-              "quantity": 1,
-              "price": 6228,
-              "total": 6228
-            }
-          ],
-          "totalPrice": 6228
-        },
-        {
-          "orderId": 1732022653276,
-          "timestamp": "2024-11-19T13:24:13.276Z",
-          "address": "gvfgvfgv",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "10",
-              "image": "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/25062392/2023/9/20/74dcf0d6-8556-4eb2-a9d7-2a990e6d1bc41695191066025MilkPepperPinkPrintedDogLeash1.jpg",
-              "name": "Dog Training Leash",
-              "quantity": 1,
-              "price": 2484,
-              "total": 2484
-            }
-          ],
-          "totalPrice": 2484
-        },
-        {
-          "orderId": 1732088907232,
-          "timestamp": "2024-11-20T07:48:27.232Z",
-          "address": "pulliseri house vangara post",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "3",
-              "image": "https://headsupfortails.com/cdn/shop/files/DSC_3922-Edit-2.jpg?v=1698399261&width=1946",
-              "name": "Dog Leash",
-              "quantity": 1,
-              "price": 1242,
-              "total": 1242
-            },
-            {
-              "id": "5",
-              "image": "https://www.zezelife.com/wp-content/uploads/2023/04/1-1.jpg",
-              "name": "Cat Tree",
-              "quantity": 1,
-              "price": 6228,
-              "total": 6228
-            },
-            {
-              "id": "11",
-              "image": "https://www.puprise.com/wp-content/uploads/2019/03/Pawise-Bloster-Cat-Bed.jpg",
-              "name": "Cat Bed",
-              "quantity": 1,
-              "price": 4140,
-              "total": 4140
-            }
-          ],
-          "totalPrice": 11610
-        }
-      ],
-      "blocked": false
+      "cart": [],
+      "order": []
     },
     {
       "id": "7d81",
@@ -104,83 +25,9 @@
       "email": "jose@gmail.com",
       "password": "jose123",
       "confirmPassword": "jose123",
-      "cart": [
-        {
-          "id": "1",
-          "title": "Premium Dog Food",
-          "price": 2070,
-          "description": "High-quality dog food for optimal health.",
-          "discount": 10,
-          "image": "https://www.petsy.online/cdn/shop/products/61N6d7o6LiL._SL1500.jpg?v=1656498364",
-          "brand": "Pawlicious",
-          "quantity": 1
-        }
-      ],
-      "order": []
-    },
-    {
-      "id": "663e",
-      "name": "hamdan",
-      "email": "hamdan@gmail.com",
-      "password": "hamdan123",
-      "confirmPassword": "hamdan123",
       "blocked": false,
-      "cart": [
-        {
-          "id": "4",
-          "title": "Cat Toy Mouse",
-          "price": 414,
-          "description": "Interactive toy for cats to chase.",
-          "discount": 20,
-          "image": "https://target.scene7.com/is/image/Target/GUEST_a8372e2a-0882-4644-9cef-0e9c888f3d9e?wid=488&hei=488&fmt=pjpeg",
-          "brand": "KittyPlay",
-          "quantity": 1
-        }
-      ],
-      "order": [
-        {
-          "orderId": 1732082382899,
-          "timestamp": "2024-11-20T05:59:42.899Z",
-          "address": "hamdan manzil thavanoor post",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "43",
-              "image": "https://images-na.ssl-images-amazon.com/images/I/71Qxpba9PFL.jpg",
-              "name": "Cat Play Mat",
-              "quantity": 1,
-              "price": 1242,
-              "total": 1242
-            }
-          ],
-          "totalPrice": 1242
-        },
-        {
-          "orderId": 1732173532810,
-          "timestamp": "2024-11-21T07:18:52.810Z",
-          "address": "dsfhafj",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "12",
-              "image": "https://thatdogintuxedo.com/cdn/shop/products/screen_shot_2017-11-07_at_9.31.14_am.png?v=1643117278",
-              "name": "Dog Jacket",
-              "quantity": 2,
-              "price": 2484,
-              "total": 4968
-            },
-            {
-              "id": "9",
-              "image": "https://rukminim2.flixcart.com/image/850/1000/xif0q/pet-shampoo/b/l/s/300-shampooch-healthy-skin-and-shiny-coat-dog-shampoo-300-ml-for-original-imah5exxgmujsgk3.jpeg?q=20&crop=false",
-              "name": "Dog Shampoo",
-              "quantity": 2,
-              "price": 829,
-              "total": 1658
-            }
-          ],
-          "totalPrice": 6626
-        }
-      ]
+      "cart": [],
+      "order": []
     },
     {
       "id": "2f2c",
@@ -190,25 +37,7 @@
       "confirmPassword": "ramees123",
       "blocked": false,
       "cart": [],
-      "order": [
-        {
-          "orderId": 1732247886478,
-          "timestamp": "2024-11-22T03:58:06.478Z",
-          "address": "ramees manzil valamangalam",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "4",
-              "image": "https://m.media-amazon.com/images/I/71P1wdh8w4L.jpg",
-              "name": "Cat Toy Mouse",
-              "quantity": 2,
-              "price": 414,
-              "total": 828
-            }
-          ],
-          "totalPrice": 828
-        }
-      ]
+      "order": []
     },
     {
       "id": "c7d8",
@@ -233,27 +62,27 @@
               "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
               "name": "Whiskers' Favorite Cat Munch",
               "quantity": 1,
-              "price": 259.45,
-              "total": 259.45
+              "price": 259,
+              "total": 259
             },
             {
               "id": "4",
               "image": "https://petpawfection.co.ke/wp-content/uploads/2024/05/purrfectoceanfish.jpg",
               "name": "Purrfect Paws Cat Food for free",
               "quantity": 1,
-              "price": 311.54,
-              "total": 311.54
+              "price": 311,
+              "total": 311
             },
             {
               "id": "7",
               "image": "https://cdn.shopify.com/s/files/1/0636/8972/0030/files/BeefCat_1_a439c68a-de21-45f0-9a67-dd2a291b73fd.jpg?v=1709442932",
               "name": "Feline Feast Cat Mix",
               "quantity": 1,
-              "price": 396.34,
-              "total": 396.34
+              "price": 396,
+              "total": 396
             }
           ],
-          "totalPrice": 967.3299999999999
+          "totalPrice": 967
         }
       ]
     },
@@ -275,11 +104,11 @@
               "id": "3",
               "image": "https://www.zigly.com/media/catalog/product/cache/c64dae22d3d7308ba9e0f4ad3d9bc2b6/w/h/whiskas_adult_1_year_chicken_dry_cat_food_-_1.2_kg.jpg",
               "quantity": 5,
-              "price": 374.36,
-              "total": 1871.8000000000002
+              "price": 374,
+              "total": 1871
             }
           ],
-          "totalPrice": 1871.8000000000002
+          "totalPrice": 1871
         }
       ],
       "orders": [
@@ -293,11 +122,11 @@
               "id": "3",
               "image": "https://www.zigly.com/media/catalog/product/cache/c64dae22d3d7308ba9e0f4ad3d9bc2b6/w/h/whiskas_adult_1_year_chicken_dry_cat_food_-_1.2_kg.jpg",
               "quantity": 5,
-              "price": 374.36,
-              "total": 1871.8000000000002
+              "price": 374,
+              "total": 1871
             }
           ],
-          "totalPrice": 1871.8000000000002
+          "totalPrice": 1871
         },
         {
           "orderId": 1732529678932,
@@ -312,11 +141,11 @@
               "image": "https://static1.viovet.co.uk/opt/s=kr/familygallery/hills-science-plan-perfect-digestion-small-mini-puppy-dry-food-with-chicken-and-brown-rice-c6rw.jpg",
               "name": "TailWaggers Nutrition Dog Food",
               "quantity": 1,
-              "price": 123.65,
-              "total": 123.65
+              "price": 123,
+              "total": 123
             }
           ],
-          "totalPrice": 123.65
+          "totalPrice": 123
         }
       ],
       "blocked": false
@@ -332,8 +161,8 @@
         {
           "id": "6",
           "name": "Kitty Krunch Gourmet Cat Food",
-          "price": 785.95,
-          "oldPrice": 1178.93,
+          "price": 785,
+          "oldPrice": 1178,
           "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
           "category": "cat",
           "seller": "Cat Haven",
@@ -359,42 +188,41 @@
       "confirmPassword": "jasim123",
       "blocked": false,
       "cart": [],
-      "order": [],
-      "orders": [
+      "order": [
         {
-          "orderId": 1732712020933,
+          "orderId": 1732794235214,
           "userId": "8c50",
           "usrName": "jasim",
-          "timestamp": "2024-11-27T12:53:40.933Z",
+          "timestamp": "2024-11-28T11:43:55.214Z",
           "address": "mundilakkal house thavanoor post, kizhisseri, kerala, 673641",
           "paymentMethod": "paypal",
           "items": [
             {
-              "id": "5",
-              "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
-              "name": "Happy Tails Cat Delight",
+              "id": "e101",
+              "image": "https://www.orangepet.in/cdn/shop/products/KitCatPremiumCatFoodClassic32Front.jpg?v=1655885345",
+              "name": "Premium dry cat food",
               "quantity": 1,
-              "price": 646.18,
-              "total": 646.18
+              "price": "799",
+              "total": 799
             },
             {
-              "id": "4",
-              "image": "https://petpawfection.co.ke/wp-content/uploads/2024/05/purrfectoceanfish.jpg",
-              "name": "Purrfect Paws Cat Food for free",
-              "quantity": 1,
-              "price": 311.54,
-              "total": 311.54
+              "id": "14",
+              "image": "https://m.media-amazon.com/images/I/81L1Cyrs68L._AC_UF1000,1000_QL80_.jpg",
+              "name": "Barking Good Dog Food",
+              "quantity": 2,
+              "price": 462,
+              "total": 925
             },
             {
-              "id": "9",
-              "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
-              "name": "Whiskers' Favorite Cat Munch",
+              "id": "6",
+              "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
+              "name": "Kitty Krunch Gourmet Cat Food",
               "quantity": 1,
-              "price": 259.45,
-              "total": 259.45
+              "price": 785,
+              "total": 785
             }
           ],
-          "totalPrice": 1217.17
+          "totalPrice": 2510
         }
       ]
     },
@@ -409,8 +237,8 @@
         {
           "id": "5",
           "name": "Happy Tails Cat Delight",
-          "price": 646.18,
-          "oldPrice": 969.27,
+          "price": 646,
+          "oldPrice": 969,
           "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
           "category": "cat",
           "seller": "Happy Pets",
@@ -428,8 +256,8 @@
         {
           "id": "7",
           "name": "Feline Feast Cat Mix",
-          "price": 396.34,
-          "oldPrice": 594.51,
+          "price": 396,
+          "oldPrice": 594,
           "image": "https://cdn.shopify.com/s/files/1/0636/8972/0030/files/BeefCat_1_a439c68a-de21-45f0-9a67-dd2a291b73fd.jpg?v=1709442932",
           "category": "cat",
           "seller": "PetWorld",
@@ -447,8 +275,8 @@
         {
           "id": "11",
           "name": "Cuddly Cats' Delight",
-          "price": 549.99,
-          "oldPrice": 824.99,
+          "price": 549,
+          "oldPrice": 824,
           "image": "https://www.justdogsstore.com/wp-content/uploads/2022/12/1-9.png",
           "category": "cat",
           "seller": "Happy Pets",
@@ -464,28 +292,7 @@
           "quantity": 1
         }
       ],
-      "order": [],
-      "orders": [
-        {
-          "orderId": 1732687390228,
-          "userId": "e256",
-          "usrName": "fasnas",
-          "timestamp": "2024-11-27T06:03:10.228Z",
-          "address": "perambra post, perambra, kerala, 987654",
-          "paymentMethod": "creditCard",
-          "items": [
-            {
-              "id": "5",
-              "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
-              "name": "Happy Tails Cat Delight",
-              "quantity": 3,
-              "price": 646.18,
-              "total": 1938.54
-            }
-          ],
-          "totalPrice": 1938.54
-        }
-      ]
+      "order": []
     },
     {
       "id": "e005",
@@ -495,7 +302,51 @@
       "confirmPassword": "jasmal123",
       "blocked": false,
       "cart": [],
-      "order": []
+      "order": [
+        {
+          "orderId": 1732781295875,
+          "userId": "e005",
+          "usrName": "jasmal",
+          "timestamp": "2024-11-28T08:08:15.875Z",
+          "address": "mundilakkal house thavanoor post , kizhisseri, kerala, 789456",
+          "paymentMethod": "paypal",
+          "items": [
+            {
+              "id": "5",
+              "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
+              "name": "Happy Tails Cat Delight",
+              "quantity": 1,
+              "price": 646,
+              "total": 646
+            },
+            {
+              "id": "8",
+              "image": "https://media.mediazs.com/bilder/2/1000/66737_pla_concept_for_life_indoor_cat_adult_3_kg_2.jpg",
+              "name": "Animal Kingdom Cat Treats",
+              "quantity": 1,
+              "price": 124,
+              "total": 124
+            },
+            {
+              "id": "12",
+              "image": "https://m.media-amazon.com/images/I/71Co7-8OiXL.jpg",
+              "name": "Purr-fectly Balanced Cat Food",
+              "quantity": 1,
+              "price": 319,
+              "total": 319
+            },
+            {
+              "id": "21",
+              "image": "https://vitalityscience.com/wp-content/uploads/2021/02/Canine-Comfort-Liver-98-510x600px-jar.jpg",
+              "name": "Canine Comfort Dog Food",
+              "quantity": 1,
+              "price": 237,
+              "total": 237
+            }
+          ],
+          "totalPrice": 1328
+        }
+      ]
     },
     {
       "id": "148e",
@@ -512,12 +363,12 @@
     {
       "id": "4",
       "name": "Purrfect Paws Cat Food for free",
-      "price": 311.54,
-      "oldPrice": 467.31,
-      "image": "https://petpawfection.co.ke/wp-content/uploads/2024/05/purrfectoceanfish.jpg",
+      "price": 311,
+      "oldPrice": 467,
+      "image": "https://target.scene7.com/is/image/Target/GUEST_4a092f52-7ce1-41f5-b15e-80db6f9e38c5?wid=400&hei=400&qlt=80&fmt=webp",
       "category": "cat",
       "seller": "Pet Supplies",
-      "stock": 53,
+      "stock": 48,
       "description": "Purrfect Paws Cat Food is designed to provide your feline friend with the nutrition they need. This formula includes high-quality proteins to support muscle development.",
       "ingredients": [
         "Turkey meal",
@@ -530,12 +381,12 @@
     {
       "id": "5",
       "name": "Happy Tails Cat Delight",
-      "price": 646.18,
-      "oldPrice": 969.27,
+      "price": 646,
+      "oldPrice": 969,
       "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
       "category": "cat",
       "seller": "Happy Pets",
-      "stock": 53,
+      "stock": 46,
       "description": "Happy Tails Cat Delight is a gourmet food that provides complete nutrition while satisfying your cat's taste buds. Each bite is full of flavor and essential nutrients.",
       "ingredients": [
         "Chicken meal",
@@ -548,12 +399,12 @@
     {
       "id": "6",
       "name": "Kitty Krunch Gourmet Cat Food",
-      "price": 785.95,
-      "oldPrice": 1178.93,
+      "price": 785,
+      "oldPrice": 1178,
       "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
       "category": "cat",
       "seller": "Cat Haven",
-      "stock": 54,
+      "stock": 51,
       "description": "Kitty Krunch Gourmet Cat Food is crafted with premium ingredients to support your cat's health and vitality. This formula is rich in proteins and omega fatty acids.",
       "ingredients": [
         "Chicken meal",
@@ -566,12 +417,12 @@
     {
       "id": "7",
       "name": "Feline Feast Cat Mix",
-      "price": 396.34,
-      "oldPrice": 594.51,
+      "price": 396,
+      "oldPrice": 594,
       "image": "https://cdn.shopify.com/s/files/1/0636/8972/0030/files/BeefCat_1_a439c68a-de21-45f0-9a67-dd2a291b73fd.jpg?v=1709442932",
       "category": "cat",
       "seller": "PetWorld",
-      "stock": 53,
+      "stock": 52,
       "description": "Feline Feast Cat Mix offers a delicious combination of flavors and textures that your cat will love. This mix is packed with essential nutrients for overall health.",
       "ingredients": [
         "Chicken meal",
@@ -584,12 +435,12 @@
     {
       "id": "8",
       "name": "Animal Kingdom Cat Treats",
-      "price": 124.75,
-      "oldPrice": 187.13,
+      "price": 124,
+      "oldPrice": 187,
       "image": "https://media.mediazs.com/bilder/2/1000/66737_pla_concept_for_life_indoor_cat_adult_3_kg_2.jpg",
       "category": "cat",
       "seller": "Animal Kingdom",
-      "stock": 56,
+      "stock": 55,
       "description": "Animal Kingdom Cat Treats are a delightful snack made with natural ingredients. These treats are perfect for rewarding your cat while providing essential nutrients.",
       "ingredients": [
         "Chicken",
@@ -602,8 +453,8 @@
     {
       "id": "9",
       "name": "Whiskers' Favorite Cat Munch",
-      "price": 259.45,
-      "oldPrice": 389.18,
+      "price": 259,
+      "oldPrice": 389,
       "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
       "category": "cat",
       "seller": "Feline Friends",
@@ -620,8 +471,8 @@
     {
       "id": "10",
       "name": "Paw-some Cat Nibbles",
-      "price": 99.99,
-      "oldPrice": 149.99,
+      "price": 99,
+      "oldPrice": 149,
       "image": "https://m.media-amazon.com/images/I/81S3YTLgaQL.jpg",
       "category": "cat",
       "seller": "Pet Supplies",
@@ -638,8 +489,8 @@
     {
       "id": "11",
       "name": "Cuddly Cats' Delight",
-      "price": 549.99,
-      "oldPrice": 824.99,
+      "price": 549,
+      "oldPrice": 824,
       "image": "https://www.justdogsstore.com/wp-content/uploads/2022/12/1-9.png",
       "category": "cat",
       "seller": "Happy Pets",
@@ -656,12 +507,12 @@
     {
       "id": "12",
       "name": "Purr-fectly Balanced Cat Food",
-      "price": 319.99,
-      "oldPrice": 479.99,
+      "price": 319,
+      "oldPrice": 479,
       "image": "https://m.media-amazon.com/images/I/71Co7-8OiXL.jpg",
       "category": "cat",
       "seller": "Cat Haven",
-      "stock": 57,
+      "stock": 56,
       "description": "Purr-fectly Balanced Cat Food is designed to meet the nutritional needs of your cat. This formula provides a perfect blend of proteins, fats, and carbohydrates.",
       "ingredients": [
         "Turkey meal",
@@ -674,8 +525,8 @@
     {
       "id": "13",
       "name": "Kittens' Choice Cat Mix",
-      "price": 245.65,
-      "oldPrice": 368.48,
+      "price": 245,
+      "oldPrice": 368,
       "image": "https://m.media-amazon.com/images/I/81p+eu7TCtL.jpg",
       "category": "cat",
       "seller": "PetWorld",
@@ -697,12 +548,12 @@
     {
       "id": "14",
       "name": "Barking Good Dog Food",
-      "price": 462.99,
-      "oldPrice": 694.49,
-      "image": "https://m.media-amazon.com/images/I/81L1Cyrs68L._AC_UF1000,1000_QL80_.jpg",
+      "price": 462,
+      "oldPrice": 694,
+      "image": "https://target.scene7.com/is/image/Target/GUEST_67eebac4-c000-4cb7-b04c-325d008c55d9?wid=400&hei=400&qlt=80&fmt=webp",
       "category": "dog",
       "seller": "Animal Kingdom",
-      "stock": 57,
+      "stock": 55,
       "description": "Barking Good Dog Food is designed for dogs of all breeds and sizes. Packed with high-quality proteins and wholesome grains, it supports energy levels and overall health.",
       "ingredients": [
         "Chicken meal",
@@ -718,8 +569,8 @@
     {
       "id": "15",
       "name": "Pawfect Meal Dog Food",
-      "price": 325.65,
-      "oldPrice": 488.48,
+      "price": 325,
+      "oldPrice": 488,
       "image": "https://headsupfortails.com/cdn/shop/files/1kg.jpg?v=1713444244",
       "category": "dog",
       "seller": "Feline Friends",
@@ -739,8 +590,8 @@
     {
       "id": "16",
       "name": "Canine Cuisine Dog Food",
-      "price": 275.99,
-      "oldPrice": 413.99,
+      "price": 275,
+      "oldPrice": 413,
       "image": "https://petcuisine.co.za/wp-content/uploads/2021/04/canine_cuisine_puppy_2.jpg",
       "category": "dog",
       "seller": "Pet Supplies",
@@ -761,8 +612,8 @@
     {
       "id": "17",
       "name": "Paw Patrol Dog Food",
-      "price": 154.99,
-      "oldPrice": 232.49,
+      "price": 154,
+      "oldPrice": 232,
       "image": "https://m.media-amazon.com/images/I/7145CWRtZXL._AC_UF1000,1000_QL80_.jpg",
       "category": "dog",
       "seller": "Happy Pets",
@@ -782,8 +633,8 @@
     {
       "id": "18",
       "name": "Ruff and Tumble Dog Food",
-      "price": "690.99",
-      "oldPrice": 1049.99,
+      "price": 690,
+      "oldPrice": 1049,
       "image": "https://www.johnnorris.co.uk/cdn/shop/files/TREROSDOGNAFCSL072_300x300@2x.jpg?v=1718172146",
       "category": "dog",
       "seller": "Cat Haven",
@@ -803,8 +654,8 @@
     {
       "id": "19",
       "name": "Super Dog Fuel High Rich",
-      "price": 487.99,
-      "oldPrice": 731.99,
+      "price": 487,
+      "oldPrice": 731,
       "image": "https://www.vonultimatedogshop.com/cdn/shop/files/k9-power-super-fuel-active-performance-1.8kg-500x500.jpg?v=1687333600&width=1445",
       "category": "dog",
       "seller": "PetWorld",
@@ -824,8 +675,8 @@
     {
       "id": "20",
       "name": "Barker's Delight Dog Food",
-      "price": 678.99,
-      "oldPrice": 1018.49,
+      "price": 678,
+      "oldPrice": 1018,
       "image": "https://m.media-amazon.com/images/I/41mpqtXcPML.jpg",
       "category": "dog",
       "seller": "Animal Kingdom",
@@ -845,12 +696,12 @@
     {
       "id": "21",
       "name": "Canine Comfort Dog Food",
-      "price": 237.65,
-      "oldPrice": 356.48,
+      "price": 237,
+      "oldPrice": 356,
       "image": "https://vitalityscience.com/wp-content/uploads/2021/02/Canine-Comfort-Liver-98-510x600px-jar.jpg",
       "category": "dog",
       "seller": "Feline Friends",
-      "stock": 49,
+      "stock": 48,
       "description": "Canine Comfort Dog Food is designed to be easy on the stomach, making it perfect for dogs with sensitive digestive systems.",
       "ingredients": [
         "Lamb meal",
@@ -866,8 +717,8 @@
     {
       "id": "22",
       "name": "Doggy's Choice Dog Food",
-      "price": 156.99,
-      "oldPrice": 235.49,
+      "price": 156,
+      "oldPrice": 235,
       "image": "https://www.dogboxproject.co.za/wp-content/uploads/2024/09/Lionels-Choice-Puppy-2.5kg.png",
       "category": "dog",
       "seller": "Pet Supplies",
@@ -878,8 +729,8 @@
     {
       "id": "23",
       "name": "Ultimate Pup Dog Food",
-      "price": 314.99,
-      "oldPrice": 472.49,
+      "price": 314,
+      "oldPrice": 472,
       "image": "https://m.media-amazon.com/images/I/61dFdOZvaRS.jpg",
       "category": "dog",
       "seller": "Happy Pets",
@@ -899,8 +750,8 @@
     {
       "id": "24",
       "name": "Cat Nutritious Food",
-      "price": 114.99,
-      "oldPrice": 272.49,
+      "price": 114,
+      "oldPrice": 272,
       "image": "https://www.petsstation.com.sg/cdn/shop/products/107436_2000x.jpg?v=1667802705",
       "category": "cat",
       "seller": "Happy Cat",
@@ -920,8 +771,9 @@
       "id": "e101",
       "name": "Premium dry cat food",
       "category": "cat",
-      "price": "799",
-      "stock": "90",
+      "price": 800,
+      "oldPrice": 1000,
+      "stock": 84,
       "seller": "New Waves",
       "image": "https://www.orangepet.in/cdn/shop/products/KitCatPremiumCatFoodClassic32Front.jpg?v=1655885345",
       "description": "Kit Cat natural premium cat food offers complete and balanced nutrition for your cat, made with carefully selected natural ingredients, and without any artificial coloring.",
@@ -943,8 +795,9 @@
       "id": "0b87",
       "name": "Dry Cat Food Cat Indoor Hairball",
       "category": "cat",
-      "price": "1200",
-      "stock": "50",
+      "price": 1200,
+      "oldPrice": 1300,
+      "stock": 50,
       "seller": "Nature Hug",
       "image": "https://www.orangepet.in/cdn/shop/products/IndoorHairballFront_1_700x.png?v=1670238385",
       "ingredients": [
@@ -966,8 +819,9 @@
       "id": "6dd6",
       "name": "Chicken & Vegetables Adult Dry Dog Food",
       "category": "dog",
-      "price": "2000",
-      "stock": "60",
+      "price": 2000,
+      "oldPrice": 2200,
+      "stock": 60,
       "seller": "New wave",
       "ingredients": [
         "Meat",
@@ -980,18 +834,18 @@
         "Cereals"
       ],
       "image": "https://headsupfortails.com/cdn/shop/files/8906002482832_20kg.jpg?v=1711436453&width=493",
-      "description": "Pedigree Chicken & Vegetables Adult Dry Dog Food is a wholesome meal, packed with essential nutrients vital to the healthy growth of your pet. The natural goodness of cereals, soybean, carrots, peas & milk blend into a tasty treat for your little one."
+      "description": "Pedigree Chicken & Vegetables Adult Dry Dog Food is a wholesome meal, packed with essential nutrients vital to the healthy growth of your pet."
     },
     {
       "id": "8972",
       "name": "Maxi Adult Dry Dog Food",
       "category": "dog",
-      "price": "2500",
-      "oldPrice": "2900",
-      "stock": "70",
+      "price": 2500,
+      "oldPrice": 2900,
+      "stock": 65,
       "seller": "Amazon",
       "ingredients": [
-        "‎‎Organic",
+        "Organic",
         "Nutrient rich",
         "Chicken",
         "Minerals",
@@ -999,6 +853,56 @@
       ],
       "image": "https://m.media-amazon.com/images/I/41IS--bWAzL._SX300_SY300_QL70_FMwebp_.jpg",
       "description": "Essential vitamins and minerals added in the diet provides all the required micronutrients and helps in the recovery process"
+    },
+    {
+      "id": "4fe7",
+      "name": "Healthy Pet Food Puppy - Chicken & Milk",
+      "category": "dog",
+      "price": 450,
+      "oldPrice": 500,
+      "stock": 60,
+      "seller": "Himalaya",
+      "ingredients": [
+        "Black Pepper",
+        "Papaya",
+        "Milk"
+      ],
+      "image": "https://himalayawellness.in/cdn/shop/files/HPF-PUPPY-1.2-Kg-FRONTSIDE.jpg?v=1708921969&width=720",
+      "description": "Healthy PET food PUPPY (Chicken & Milk) is enriched with the goodness of milk and herbs, which contribute to your puppy’s healthy, happy, and longer life."
+    },
+    {
+      "id": "0fe3",
+      "name": "Healthy Pet Food Adult - Chicken & Pumpkin",
+      "category": "dog",
+      "price": 400,
+      "oldPrice": 450,
+      "stock": 100,
+      "seller": "Himalaya",
+      "ingredients": [
+        "Pumpkin",
+        "Popala",
+        "Tree of Heaven"
+      ],
+      "image": "https://himalayawellness.in/cdn/shop/files/HPF-ADULT-1.jpg?v=1708938339&width=720",
+      "description": "Healthy PET food ADULT (Chicken & Pumpkin) is enriched with the goodness of Pumpkin and herbs, which contribute to your adult dog’s happy, healthy, and longer life."
+    },
+    {
+      "id": "6855",
+      "name": "Blue Buffalo Adult Dry Cat Food with Chicken",
+      "category": "cat",
+      "price": 1700,
+      "oldPrice": 1800,
+      "stock": 80,
+      "seller": "Target",
+      "ingredients": [
+        "chicken",
+        "brownrice",
+        "oatmeal",
+        "peas",
+        "fish"
+      ],
+      "image": "https://target.scene7.com/is/image/Target/GUEST_7b18f7fd-69c3-488f-87aa-64fd9a1254cf?wid=488&hei=488&fmt=pjpeg",
+      "description": "Blue Buffalo Tastefuls Sensitive Stomach Cat Food is a delicious dry cat food with real chicken as the first ingredient. A great choice for Pet Parents who want to prioritize natural ingredients while pleasing picky palates"
     }
   ],
   "Orders": [
@@ -1016,11 +920,11 @@
           "image": "https://static1.viovet.co.uk/opt/s=kr/familygallery/hills-science-plan-perfect-digestion-small-mini-puppy-dry-food-with-chicken-and-brown-rice-c6rw.jpg",
           "name": "TailWaggers Nutrition Dog Food",
           "quantity": 1,
-          "price": 123.65,
-          "total": 123.65
+          "price": 123,
+          "total": 123
         }
       ],
-      "totalPrice": 123.65
+      "totalPrice": 123
     },
     {
       "id": "205f",
@@ -1036,11 +940,11 @@
           "image": "https://cdn.shopify.com/s/files/1/0636/8972/0030/files/BeefCat_1_a439c68a-de21-45f0-9a67-dd2a291b73fd.jpg?v=1709442932",
           "name": "Feline Feast Cat Mix",
           "quantity": 1,
-          "price": 396.34,
-          "total": 396.34
+          "price": 396,
+          "total": 396
         }
       ],
-      "totalPrice": 396.34
+      "totalPrice": 396
     },
     {
       "id": "1f1a",
@@ -1056,11 +960,11 @@
           "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
           "name": "Kitty Krunch Gourmet Cat Food",
           "quantity": 1,
-          "price": 785.95,
-          "total": 785.95
+          "price": 785,
+          "total": 785
         }
       ],
-      "totalPrice": 785.95
+      "totalPrice": 785
     },
     {
       "id": "5d72",
@@ -1076,11 +980,11 @@
           "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
           "name": "Happy Tails Cat Delight",
           "quantity": 3,
-          "price": 646.18,
-          "total": 1938.54
+          "price": 646,
+          "total": 1938
         }
       ],
-      "totalPrice": 1938.54
+      "totalPrice": 1938
     },
     {
       "id": "1f4e",
@@ -1096,27 +1000,27 @@
           "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
           "name": "Happy Tails Cat Delight",
           "quantity": 1,
-          "price": 646.18,
-          "total": 646.18
+          "price": 646,
+          "total": 646
         },
         {
           "id": "4",
           "image": "https://petpawfection.co.ke/wp-content/uploads/2024/05/purrfectoceanfish.jpg",
           "name": "Purrfect Paws Cat Food for free",
           "quantity": 1,
-          "price": 311.54,
-          "total": 311.54
+          "price": 311,
+          "total": 311
         },
         {
           "id": "9",
           "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
           "name": "Whiskers' Favorite Cat Munch",
           "quantity": 1,
-          "price": 259.45,
-          "total": 259.45
+          "price": 259,
+          "total": 259
         }
       ],
-      "totalPrice": 1217.17
+      "totalPrice": 1217
     },
     {
       "id": "4b08",
@@ -1132,27 +1036,199 @@
           "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
           "name": "Whiskers' Favorite Cat Munch",
           "quantity": 1,
-          "price": 259.45,
-          "total": 259.45
+          "price": 259,
+          "total": 259
         },
         {
           "id": "4",
           "image": "https://petpawfection.co.ke/wp-content/uploads/2024/05/purrfectoceanfish.jpg",
           "name": "Purrfect Paws Cat Food for free",
           "quantity": 1,
-          "price": 311.54,
-          "total": 311.54
+          "price": 311,
+          "total": 311
         },
         {
           "id": "7",
           "image": "https://cdn.shopify.com/s/files/1/0636/8972/0030/files/BeefCat_1_a439c68a-de21-45f0-9a67-dd2a291b73fd.jpg?v=1709442932",
           "name": "Feline Feast Cat Mix",
           "quantity": 1,
-          "price": 396.34,
-          "total": 396.34
+          "price": 396,
+          "total": 396
         }
       ],
-      "totalPrice": 967.3299999999999
+      "totalPrice": 967
+    },
+    {
+      "id": "d1df",
+      "orderId": 1732772954956,
+      "userId": "663e",
+      "usrName": "hamdan",
+      "timestamp": "2024-11-28T05:49:14.956Z",
+      "address": "hamdan manzil thavanoor, kizhisseri, kerala, 673641",
+      "paymentMethod": "paypal",
+      "items": [
+        {
+          "id": "5",
+          "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
+          "name": "Happy Tails Cat Delight",
+          "quantity": 5,
+          "price": 646,
+          "total": 3230
+        },
+        {
+          "id": "8972",
+          "image": "https://m.media-amazon.com/images/I/41IS--bWAzL._SX300_SY300_QL70_FMwebp_.jpg",
+          "name": "Maxi Adult Dry Dog Food",
+          "quantity": 5,
+          "price": 2500,
+          "total": 12500
+        },
+        {
+          "id": "e101",
+          "image": "https://www.orangepet.in/cdn/shop/products/KitCatPremiumCatFoodClassic32Front.jpg?v=1655885345",
+          "name": "Premium dry cat food",
+          "quantity": 5,
+          "price": 799,
+          "total": 3995
+        }
+      ],
+      "totalPrice": 19725
+    },
+    {
+      "id": "2695",
+      "orderId": 1732775256061,
+      "userId": "7d81",
+      "usrName": "jose",
+      "timestamp": "2024-11-28T06:27:36.061Z",
+      "address": "jaseem manzil thavanoor, kizhisseri, kerala, 673641",
+      "paymentMethod": "creditCard",
+      "items": [
+        {
+          "id": "4",
+          "image": "https://petpawfection.co.ke/wp-content/uploads/2024/05/purrfectoceanfish.jpg",
+          "name": "Purrfect Paws Cat Food for free",
+          "quantity": 5,
+          "price": 311,
+          "total": 1557
+        },
+        {
+          "id": "5",
+          "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
+          "name": "Happy Tails Cat Delight",
+          "quantity": 1,
+          "price": 646,
+          "total": 646
+        }
+      ],
+      "totalPrice": 2203
+    },
+    {
+      "id": "eb2b",
+      "orderId": 1732776558216,
+      "userId": "8c50",
+      "usrName": "jasim",
+      "timestamp": "2024-11-28T06:49:18.216Z",
+      "address": "mundilakkal H thavanoor post, kizhisseri, kerala, 673641",
+      "paymentMethod": "paypal",
+      "items": [
+        {
+          "id": "6",
+          "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
+          "name": "Kitty Krunch Gourmet Cat Food",
+          "quantity": 2,
+          "price": 785,
+          "total": 1570
+        },
+        {
+          "id": "7",
+          "image": "https://cdn.shopify.com/s/files/1/0636/8972/0030/files/BeefCat_1_a439c68a-de21-45f0-9a67-dd2a291b73fd.jpg?v=1709442932",
+          "name": "Feline Feast Cat Mix",
+          "quantity": 1,
+          "price": 396,
+          "total": 396
+        }
+      ],
+      "totalPrice": 1968
+    },
+    {
+      "id": "71a7",
+      "orderId": 1732781295875,
+      "userId": "e005",
+      "usrName": "jasmal",
+      "timestamp": "2024-11-28T08:08:15.875Z",
+      "address": "mundilakkal house thavanoor post , kizhisseri, kerala, 789456",
+      "paymentMethod": "paypal",
+      "items": [
+        {
+          "id": "5",
+          "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
+          "name": "Happy Tails Cat Delight",
+          "quantity": 1,
+          "price": 646,
+          "total": 646
+        },
+        {
+          "id": "8",
+          "image": "https://media.mediazs.com/bilder/2/1000/66737_pla_concept_for_life_indoor_cat_adult_3_kg_2.jpg",
+          "name": "Animal Kingdom Cat Treats",
+          "quantity": 1,
+          "price": 124,
+          "total": 124
+        },
+        {
+          "id": "12",
+          "image": "https://m.media-amazon.com/images/I/71Co7-8OiXL.jpg",
+          "name": "Purr-fectly Balanced Cat Food",
+          "quantity": 1,
+          "price": 319,
+          "total": 319
+        },
+        {
+          "id": "21",
+          "image": "https://vitalityscience.com/wp-content/uploads/2021/02/Canine-Comfort-Liver-98-510x600px-jar.jpg",
+          "name": "Canine Comfort Dog Food",
+          "quantity": 1,
+          "price": 237,
+          "total": 237
+        }
+      ],
+      "totalPrice": 1328
+    },
+    {
+      "id": "a461",
+      "orderId": 1732794235214,
+      "userId": "8c50",
+      "usrName": "jasim",
+      "timestamp": "2024-11-28T11:43:55.214Z",
+      "address": "mundilakkal house thavanoor post, kizhisseri, kerala, 673641",
+      "paymentMethod": "paypal",
+      "items": [
+        {
+          "id": "e101",
+          "image": "https://www.orangepet.in/cdn/shop/products/KitCatPremiumCatFoodClassic32Front.jpg?v=1655885345",
+          "name": "Premium dry cat food",
+          "quantity": 1,
+          "price": 799,
+          "total": 799
+        },
+        {
+          "id": "14",
+          "image": "https://m.media-amazon.com/images/I/81L1Cyrs68L._AC_UF1000,1000_QL80_.jpg",
+          "name": "Barking Good Dog Food",
+          "quantity": 2,
+          "price": 462,
+          "total": 924
+        },
+        {
+          "id": "6",
+          "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
+          "name": "Kitty Krunch Gourmet Cat Food",
+          "quantity": 1,
+          "price": 785,
+          "total": 785
+        }
+      ],
+      "totalPrice": 2510
     }
   ]
 }

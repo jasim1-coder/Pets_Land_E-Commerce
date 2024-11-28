@@ -37,8 +37,8 @@ const ProductList = ({ selectedCategory}) => {
           </Link>
           <h3>{product.name}</h3>
           <p>{product.description}</p>
-          <p>Price: ₹{product.price}</p>
-          <p>Seller: {product.seller}</p>
+          <p><strong> Price: </strong>₹{product.price}</p>
+          <p><strong> Seller: </strong>{product.seller}</p>
         </div>
       ))
     )}

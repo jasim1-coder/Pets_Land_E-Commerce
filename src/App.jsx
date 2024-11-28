@@ -15,12 +15,9 @@ import OrderSuccessPage from "./components/Success_Page/Order_Success";
 import { Toaster } from "react-hot-toast";
 import { AdminContextProvider } from "./context/AdminContext";
 
-import AdminHomePage from "./components/Admin/Admin_Home";
 import ManageProducts from "./components/Admin/Manage_Product"; // Add this
-import AddProduct from "./components/Admin/Add_Product"; // Add this
-import EditProduct from "./components/Admin/Edit_Product"; // Add this
+
 import ManageUsers from "./components/Admin/Manage_Users"; // Add this
-import OrdersPage from "./components/Admin/OrderPage";
 import AdminDashboard from "./components/Admin/Admin_Home";
 import LayoutAdmin from "./components/AdminLayout.jsx/LayoutAdmin";
 import GlobalOrders from "./components/Admin/AllOrder/Order";

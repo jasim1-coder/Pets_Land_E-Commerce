@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AdminContext } from "../../context/AdminContext"; // Adjust the import path based on your project structure
 import "./Navbar.css";
+import PieChart from "../PieChart/PieChart";
 
 const AdminDashboard = () => {
   const {
@@ -53,7 +54,7 @@ const AdminDashboard = () => {
               <div className="card text-white bg-info mb-3">
                 <div className="card-body">
                   <h5 className="card-title">Total Revenue</h5>
-                  <p className="card-text">₹{totalRevenue}</p>
+                  <p className="card-text">₹{totalRevenue.toFixed(2)}</p>
                 </div>
               </div>
             </div>
@@ -113,6 +114,8 @@ const AdminDashboard = () => {
             <p>No recent orders available.</p>
           )}
         </main>
+        <PieChart/>
+
       </div>
     </div>
   );

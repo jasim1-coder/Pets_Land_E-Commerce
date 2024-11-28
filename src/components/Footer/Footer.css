@@ -4,15 +4,17 @@
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .container {
+  .container1 {
     display: flex;
-    justify-content: space-between;
+    padding-left: 20x;
     flex-wrap: wrap;
     gap: 20px;
-    margin-bottom: 0px;
+    justify-content: space-around;
+  
   }
   
   .footer-section {
+    margin-left: 50px;
     flex: 1;
     min-width: 200px;
   }

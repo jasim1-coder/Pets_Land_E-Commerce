@@ -8,31 +8,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1050;
 }
-
-.custom-modal-container {
-    background: #fffdfd;
-    padding: 20px;
+.custom-modal-content{
+    margin-top: 5.5cm;
+    height:20cm;
+    width:15cm;
+}
+.container {
+    background: #ffffff;
+    padding: 500px;
     border-radius: 10px;
-    width: 400px;
-    max-width: 90%;
-    height: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 60%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
     position: relative;
     overflow-y: auto; /* Add scroll if content overflows */
 }
-
-.custom-modal-close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
 .custom-modal-header {
     background: #ffffff;
     padding: 10px;
@@ -40,17 +32,19 @@
     margin-bottom: 15px;
 }
 
-.custom-modal-header h2 {
-    margin: 0;
-    color: #000; /* Black text */
-    font-size: 1.5rem;
-    text-align: center;
+.custom-modal-content::-webkit-scrollbar {
+    width: 8px;
 }
-
-.custom-modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Add gap between mapped content */
+.custom-modal-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.custom-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+.custom-modal-content .list-group {
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto; /* Scroll only for the item list */
 }
 
 .cart-item {

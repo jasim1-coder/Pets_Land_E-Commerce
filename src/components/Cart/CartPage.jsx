@@ -32,19 +32,21 @@ function CartPage() {
         <div className="cart-items-container">
           {cart.map((product) => (
             <div key={product.id} className="cart-item">
-              <img src={product.image} alt={product.name} className="cart-item-image" />
-              <div className="cart-item-details">
-                <h3>{product.name}</h3>
-                <p>Price: ₹{product.price}</p>
-                <p>Quantity: {product.quantity}</p>
-                <div className="cart-item-actions">
-                  <button className="action-btn" onClick={() => increaseQuantity(product.id)}>+</button>
-                  <button className="action-btn" onClick={() => decreaseQuantity(product.id)}>-</button>
-                  <button className="action-btn" onClick={() => removeFromCart(product.id)}>Remove</button>
-                </div>
-              </div>
-            </div>
-          ))}
+  <img src={product.image} alt={product.name} className="cart-item-image" />
+  <div className="cart-item-details">
+    <h3>{product.name}</h3>
+    <p>Price: ₹{product.price}</p>
+    <p>Quantity: {product.quantity}</p>
+    <p>Total: ₹{product.price * product.quantity}</p> {/* Calculate total price */}
+    
+    <div className="cart-item-actions">
+      <button className="action-btn" onClick={() => increaseQuantity(product.id)}>+</button>
+      <button className="action-btn" onClick={() => decreaseQuantity(product.id)}>-</button>
+      <button className="action-btn" onClick={() => removeFromCart(product.id)}>Remove</button>
+    </div>
+  </div>
+</div>
+      ))}
           <div className="total"><p>Total Price: ₹{totalPrice}</p></div>
           <button className="place-order-btn" onClick={handlePlaceOrder}>Buy Now</button>
         </div>

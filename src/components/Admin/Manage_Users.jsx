@@ -38,7 +38,8 @@ const ManageUsers = () => {
     try {
       const response = await axios.get(`http://localhost:3000/users/${id}`);
       const user = response.data;
-      setOrderModalContent(user.orders || []); // Set order content
+      setOrderModalContent(user.order || []); // Set order content
+      
       setOrderModalOpen(true);
     } catch (error) {
       console.error('Error fetching user orders:', error);
@@ -99,7 +100,7 @@ const ManageUsers = () => {
                   </span>
                 </td>
                 <td>
-                  {user.orders && user.orders.length > 0 ? (
+                  {user.order && user.order.length > 0 ? (
                     <button
                       className="btn btn-info btn-sm"
                       onClick={() => handleOpenOrderModal(user.id)}
@@ -142,29 +143,42 @@ const ManageUsers = () => {
         </table>
       </div>
 
-      {/* Cart Modal */}
       <Modal isOpen={isCartModalOpen} onClose={handleCloseCartModal}>
-        <h2>User Cart</h2>
-        {cartModalContent.length > 0 ? (
-          <ul className="cart-list">
-            {cartModalContent.map((item) => (
-              <li key={item.id} className="cart-item">
-                <img src={item.image} alt={item.title} className="cart-item-image" />
-                <div className="cart-item-details">
-                  <h4>{item.title}</h4>
-                  <p>Quantity: {item.quantity}</p>
-                  <p>Price: ${item.price}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No items in the cart.</p>
-        )}
-        <button onClick={handleCloseCartModal} className="btn btn-secondary">
-          Close
-        </button>
-      </Modal>
+  <h2 className="text-center text-primary">User Cart</h2>
+  {cartModalContent.length > 0 ? (
+    <div className="container py-3">
+      {cartModalContent.map((item) => (
+        <div key={item.id} className="border p-4 mb-4 rounded shadow-sm">
+          <div className="d-flex align-items-center">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="img-fluid rounded me-3"
+              style={{ maxWidth: '80px' }}
+            />
+            <div>
+              <h5 className="mb-1">{item.name}</h5>
+              <p className="mb-1">
+                <span className="text-muted">Quantity:</span> {item.quantity}
+              </p>
+              <p className="mb-1">
+                <span className="text-muted">Price:</span> ₹{item.price}
+              </p>
+              <p className="mb-1">
+                <span className="text-muted">Total Price:</span> ₹{(item.price * item.quantity).toFixed(2)}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <p className="text-center text-danger">No items in the cart.</p>
+  )}
+  <button onClick={handleCloseCartModal} className="btn btn-outline-danger d-block mx-auto mt-3">
+    Close
+  </button>
+</Modal>
 
       {/* Order Modal */}
       <Modal isOpen={isOrderModalOpen} onClose={handleCloseOrderModal}>
@@ -174,11 +188,11 @@ const ManageUsers = () => {
       {orderModalContent.map((order) => (
         <div key={order.orderId} className="border p-4 mb-4 rounded shadow-sm">
           <h3 className="fs-4">Order ID: {order.orderId}</h3>
-          <p><strong className="fw-bold">User Name:</strong> {order.usrName}</p>
+          <p><strong className="fw-bold">Name:</strong> {order.usrName}</p>
           <p><strong className="fw-bold">Address:</strong> {order.address}</p>
           <p><strong className="fw-bold">Payment Method:</strong> {order.paymentMethod}</p>
           <p><strong className="fw-bold">Order Date:</strong> {new Date(order.timestamp).toLocaleDateString()}</p>
-          <p><strong className="fw-bold">Total Price:</strong> ${order.totalPrice.toFixed(2)}</p>
+          <p><strong className="fw-bold">Total Price:</strong> ₹ {order.totalPrice}</p>
           
           <h4 className="fs-5">Items:</h4>
           <div className="list-group">
@@ -188,8 +202,8 @@ const ManageUsers = () => {
                 <div>
                   <h5 className="mb-1">{item.name}</h5>
                   <p className="mb-1"><span className="text-muted">Quantity:</span> {item.quantity}</p>
-                  <p className="mb-1"><span className="text-muted">Price:</span> ${item.price.toFixed(2)}</p>
-                  <p><span className="text-muted">Total:</span> ${item.total.toFixed(2)}</p>
+                  <p className="mb-1"><span className="text-muted">Price:</span> ₹{item.price}</p>
+                  <p><span className="text-muted">Total:</span> ₹{item.total}</p>
                 </div>
               </div>
             ))}

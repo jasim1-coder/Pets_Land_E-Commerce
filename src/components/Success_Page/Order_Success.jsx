@@ -14,7 +14,7 @@ function OrderSuccessPage() {
         if (userId) {
           const response = await axios(`http://localhost:3000/users/${userId}`);
           const data = response.data
-          setOrderDetails(data.orders); // Store the orders array in state
+          setOrderDetails(data.order); // Store the orders array in state
         } else {
           toast.error('No user ID found.');
         }
@@ -45,7 +45,7 @@ function OrderSuccessPage() {
                       <div className="item-details">
                         <p><strong>{item.name}</strong></p>
                         <p>Quantity: {item.quantity}</p>
-                        <p>Price: ₹{item.price.toFixed(2)}</p>
+                        <p>Price: ₹{item.price}</p>
                         <p>Total: ₹{item.total.toFixed(2)}</p>
                       </div>
                     </li>
