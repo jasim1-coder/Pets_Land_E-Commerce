@@ -8,7 +8,6 @@ const Modal = ({isOpen, onClose, children}) => {
             <div className="custom-modal-content">
                 <button className="custom-modal-close" onClick={onClose}>
                 &times;
-
                 </button>
                 {children}
             </div>

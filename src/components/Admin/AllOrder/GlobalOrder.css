@@ -1,56 +1,37 @@
 /* GlobalOrders.css */
-.card-body{
-    width: 100%;
-}.card-order {
-    margin-bottom: 20px;
-  }
-  
-  .card-order .card-header {
-    background-color: #f8f9fa;
-    font-weight: bold;
-  }
-  
-  .card-order .order-details {
-    margin-top: 10px;
-  }
-  
-  .card-order .order-item {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-  }
-  
-  .card-order .order-item img {
-    max-width: 80px;
-    margin-right: 15px;
-  }
-  
-  .card-order .order-item-details {
-    flex: 1;
-  }
-  
-  .card-order .order-item-details p {
-    margin-bottom: 5px;
-  }
-  
-  .card-order .order-price {
-    font-weight: bold;
-  }
-  
-  .card-order .order-footer {
-    margin-top: 10px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .card-order .btn-close {
-    margin-left: 10px;
-  }
-  
-  /* Styling for the global orders container */
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
+
+.card-order {
+  margin-bottom: 20px;
+}
+
+/* Ensure all cards have the same height */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Set consistent height for all cards */
+}
+
+.card-body {
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.scrollable-list {
+  max-height: 150px; /* Limit the height of the list */
+  overflow-y: auto;
+  border: 1px solid #45607b;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.card-footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}

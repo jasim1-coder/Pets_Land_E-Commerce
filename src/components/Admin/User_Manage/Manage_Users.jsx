@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import './ManageUser.css'; // Import custom styles
-import Modal from "./Modal1";
+import Modal from "../Modals/Modal1";
+import { AdminContext } from '../../../context/AdminContext';
 
 const ManageUsers = () => {
-  const [users, setUsers] = useState([]);
   const [isCartModalOpen, setCartModalOpen] = useState(false);
   const [cartModalContent, setCartModalContent] = useState([]);
   const [isOrderModalOpen, setOrderModalOpen] = useState(false);
   const [orderModalContent, setOrderModalContent] = useState([]);
+
+  const {deleteUser,users,setUsers,blockUser} = useContext(AdminContext)
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -56,23 +58,17 @@ const ManageUsers = () => {
     setOrderModalContent([]);
   };
 
+ 
+
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/users/${id}`);
-      setUsers(users.filter((user) => user.id !== id));
+      deleteUser(id); // Use deleteUser from context
     } catch (error) {
       console.error('Error deleting user:', error);
     }
   };
 
-  const handleToggleBlock = async (userId, isBlocked) => {
-    try {
-      await axios.patch(`http://localhost:3000/users/${userId}`, { blocked: !isBlocked });
-      setUsers(users.map((user) => (user.id === userId ? { ...user, blocked: !isBlocked } : user)));
-    } catch (error) {
-      console.error('Error updating user block status:', error);
-    }
-  };
+
 
   return (
     <div className="">
@@ -125,7 +121,7 @@ const ManageUsers = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleToggleBlock(user.id, user.blocked)}
+                    onClick={() => blockUser(user.id, user.blocked)}
                     className={`btn ${user.blocked ? 'btn-success' : 'btn-danger'} btn-sm`}
                   >
                     {user.blocked ? 'Unblock' : 'Block'}
@@ -144,9 +140,9 @@ const ManageUsers = () => {
       </div>
 
       <Modal isOpen={isCartModalOpen} onClose={handleCloseCartModal}>
-  <h2 className="text-center text-primary">User Cart</h2>
   {cartModalContent.length > 0 ? (
     <div className="container py-3">
+      <div><h2>User Cart</h2></div>
       {cartModalContent.map((item) => (
         <div key={item.id} className="border p-4 mb-4 rounded shadow-sm">
           <div className="d-flex align-items-center">
@@ -175,16 +171,13 @@ const ManageUsers = () => {
   ) : (
     <p className="text-center text-danger">No items in the cart.</p>
   )}
-  <button onClick={handleCloseCartModal} className="btn btn-outline-danger d-block mx-auto mt-3">
-    Close
-  </button>
 </Modal>
 
       {/* Order Modal */}
       <Modal isOpen={isOrderModalOpen} onClose={handleCloseOrderModal}>
-  <h2 className="text-center text-primary">User Orders</h2>
   {orderModalContent.length > 0 ? (
     <div className="container py-3">
+      <div><h2>User Orders</h2></div>
       {orderModalContent.map((order) => (
         <div key={order.orderId} className="border p-4 mb-4 rounded shadow-sm">
           <h3 className="fs-4">Order ID: {order.orderId}</h3>
@@ -214,9 +207,7 @@ const ManageUsers = () => {
   ) : (
     <p className="text-center text-danger">No orders found.</p>
   )}
-  <button onClick={handleCloseOrderModal} className="btn btn-outline-danger d-block mx-auto mt-3">
-    Close
-  </button>
+
 </Modal>
 
     </div>

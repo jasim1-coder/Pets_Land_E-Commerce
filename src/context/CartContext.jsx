@@ -66,26 +66,42 @@ function CartContextProvider({ children }) {
   // Increase quantity
   const increaseQuantity = async (productId) => {
     const userId = localStorage.getItem("id");
-
+  
     if (!userId) return;
-
+  
     try {
+      // Fetch user data
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
       const user = response.data;
-
+  
       const productIndex = user.cart.findIndex((item) => item.id === productId);
-
+  
       if (productIndex >= 0) {
-        user.cart[productIndex].quantity += 1;
+        const cartItem = user.cart[productIndex];
+  
+        const productResponse = await axios.get(`http://localhost:3000/product/${productId}`);
+        const product = productResponse.data;
+  
+        if (cartItem.quantity + 1 > product.stock) {
+          toast.error(`Insufficient stock`);
+          return;
+        }
+  
+        cartItem.quantity += 1;
+  
         await axios.patch(`http://localhost:3000/users/${userId}`, {
           cart: user.cart,
         });
+  
         setCart([...user.cart]);
+        toast.success(`Quantity updated.`);
       }
     } catch (error) {
       console.error("Error increasing quantity:", error);
+      toast.error("Error updating the quantity. Please try again.");
     }
   };
+  
 
   // Decrease quantity
   const decreaseQuantity = async (productId) => {
@@ -105,6 +121,8 @@ function CartContextProvider({ children }) {
           cart: user.cart,
         });
         setCart([...user.cart]);
+        toast.success(`Quantity updated.`);
+
       }
     } catch (error) {
       console.error("Error decreasing quantity:", error);

@@ -45,7 +45,7 @@ function Login_Page() {
       const matchedUser = users.find(
         (user) =>
           user.email.toLowerCase() === values.email.toLowerCase() &&
-          user.password === values.password 
+          user.password === values.password && user.blocked === false
       );
 
       if (matchedUser) {

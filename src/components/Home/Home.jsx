@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ProductList from "../Products_list/Products_list";
 import "./Home.css";
+import { AdminContext } from "../../context/AdminContext";
 
 const bannerImages = [
   "https://img.freepik.com/premium-photo/dogs-cats-peeking-clear-solid-blue-top-line-petshop-banner-happy-smile-funny-generative-ai-image-weber_31965-211700.jpg?w=900",
@@ -11,15 +12,18 @@ const bannerImages = [
 
 function Home() {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const {selectedCategory, updateCategory} = useContext(AdminContext)
   useEffect(() => {
+
     // Change banner 
     const interval = setInterval(() => {setCurrentBannerIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);}, 4000);
     return () => clearInterval(interval); 
   }, []);
+
 const handleCategory = (category) => {
-  setSelectedCategory(category)
+  updateCategory(category)
 }
+
   return (
     <div className="home">
      {/* Slideshow Banner */}
@@ -32,10 +36,11 @@ const handleCategory = (category) => {
           }} >Dogs</div>
         <div className="category-card" onClick={() => handleCategory("cat")} style={{ backgroundImage: `url("https://img.freepik.com/premium-photo/cat-with-yellow-background-that-sayscat_670382-24884.jpg")`
           }} >Cats</div>
-          <div className="category-card" onClick={() => handleCategory(null)} style={{backgroundImage: `url(https://www.shutterstock.com/image-photo/portrait-cat-dog-front-bright-600nw-1927527212.jpg)`}}>Dog & Cat</div>
+          <div className="category-card" onClick={() => handleCategory("all")} style={{backgroundImage: `url(https://www.shutterstock.com/image-photo/portrait-cat-dog-front-bright-600nw-1927527212.jpg)`}}>Dog & Cat</div>
       </div>
-      {/* Product List */}
-      <ProductList selectedCategory={selectedCategory} />
+
+      <ProductList selectedCategory={selectedCategory || "all"} />
+
     </div>
   );
 }

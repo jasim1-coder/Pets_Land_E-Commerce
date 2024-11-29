@@ -2,10 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-// Create the AdminContext
 export const AdminContext = createContext();
 
-// AdminContextProvider Component
 export const AdminContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
@@ -16,34 +14,60 @@ export const AdminContextProvider = ({ children }) => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [totalOrders, setTotalOrders] = useState(0);
   const [totalRevenue, setTotalRevenue] = useState(0);
+
   const [topSellingProducts, setTopSellingProducts] = useState([]);
   const [recentOrders, setRecentOrders] = useState([]);
 
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+
   useEffect(() => {
-    // Fetch products, users, and orders data from the server
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       try {
-        // Fetch products
         const productsResponse = await axios.get('http://localhost:3000/product');
         setProducts(productsResponse.data);
-
-        // Fetch users
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+  
+    fetchProducts();
+  }, [products]); 
+  
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
         const usersResponse = await axios.get('http://localhost:3000/users');
         setUsers(usersResponse.data);
-
-        // Fetch orders
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
+  
+    fetchUsers();
+  }, [users]);
+  
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
         const ordersResponse = await axios.get('http://localhost:3000/Orders');
         setOrders(ordersResponse.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching orders:', error);
       }
     };
+  
+    fetchOrders();
+  }, [orders]);
 
-    fetchData();
-  }, [products,users,orders]);
+
+  const updateCategory = (category) => {
+    setSelectedCategory(category);
+  };
+
 
   useEffect(() => {
-    // Update derived stats whenever products, users, or orders change
+    // Update count of products, users, or orders change
     setTotalUsers(users.length);
     setTotalProducts(products.length);
     setTotalOrders(orders.length);
@@ -60,6 +84,9 @@ export const AdminContextProvider = ({ children }) => {
         0
       )
     }));
+
+
+
     
     const sortedTopSelling = productSales.sort((a, b) => b.quantitySold - a.quantitySold).slice(0, 5);  // Top 5 selling products
     setTopSellingProducts(sortedTopSelling);
@@ -69,7 +96,7 @@ export const AdminContextProvider = ({ children }) => {
     setRecentOrders(sortedOrder);
   }, [users, products, orders]);
 
-  // Add a new product
+  // Add product
   const addProduct = async (productData) => {
     try {
       const response = await axios.post('http://localhost:3000/product', productData);
@@ -79,19 +106,18 @@ export const AdminContextProvider = ({ children }) => {
     }
   };
 
-  // Edit an existing product
+  // Edit  product
   const editProduct = async (id, updatedProduct) => {
     try {
       const response = await axios.put(`http://localhost:3000/product/${id}`, updatedProduct);
-      setProducts((prev) =>
-        prev.map((product) => (product.id === id ? response.data : product))
+      setProducts((prev) => prev.map((product) => (product.id === id ? response.data : product))
       );
     } catch (error) {
       console.error('Error editing product:', error);
     }
   };
 
-  // Delete a product
+  // Delete  product
   const deleteProduct = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/product/${id}`);
@@ -101,39 +127,13 @@ export const AdminContextProvider = ({ children }) => {
     }
   };
 
-  // Add a new user
-  const addUser = async (newUser) => {
-    try {
-      const response = await axios.post('http://localhost:3000/users', newUser);
-      setUsers((prev) => [...prev, response.data]);
-    } catch (error) {
-      console.error('Error adding user:', error);
-    }
-  };
-
-  // Edit an existing user (Including Block/Unblock User functionality)
-  const editUser = async (id, updatedUser) => {
-    try {
-      const response = await axios.put(`http://localhost:3000/users/${id}`, updatedUser);
-      setUsers((prev) =>
-        prev.map((user) => (user.id === id ? response.data : user))
-      );
-      toast.success('User updated successfully');
-    } catch (error) {
-      console.error('Error editing user:', error);
-      toast.error('Error updating user');
-    }
-  };
-
   // Block or unblock a user
-  const blockUser = async (id, isBlocked) => {
+  const blockUser = async (userId, isBlocked) => {
     try {
-      const updatedUser = { blocked: isBlocked };
-      const response = await axios.put(`http://localhost:3000/users/${id}`, updatedUser);
-      setUsers((prev) =>
-        prev.map((user) => (user.id === id ? { ...user, blocked: isBlocked } : user))
-      );
-      toast.success(isBlocked ? 'User blocked successfully' : 'User unblocked successfully');
+      const updatedStatus = { blocked: !isBlocked };
+      await axios.patch(`http://localhost:3000/users/${userId}`, updatedStatus);
+      setUsers((prevUsers) => prevUsers.map((user) => user.id === userId ? { ...user, blocked: !isBlocked } : user ));
+      toast.success(isBlocked ?'User unblocked successfully' :  'User blocked successfully');
     } catch (error) {
       console.error('Error blocking/unblocking user:', error);
       toast.error('Error blocking/unblocking user');
@@ -151,13 +151,15 @@ export const AdminContextProvider = ({ children }) => {
       toast.error('Error deleting user');
     }
   };
-
   return (
     <AdminContext.Provider
       value={{
         products,
         users,
+        setUsers,
         orders,
+        selectedCategory,
+        updateCategory,
         totalUsers,
         totalProducts,
         totalOrders,
@@ -167,8 +169,6 @@ export const AdminContextProvider = ({ children }) => {
         addProduct,
         editProduct,
         deleteProduct,
-        addUser,
-        editUser,
         deleteUser,
         blockUser,
       }}
@@ -179,6 +179,6 @@ export const AdminContextProvider = ({ children }) => {
 };
 
 // Custom hook to use AdminContext
-export const useAdminContext = () => {
-  return useContext(AdminContext);
-};
+// export const useAdminContext = () => {
+//   return useContext(AdminContext);
+// };

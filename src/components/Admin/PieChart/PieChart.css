@@ -5,8 +5,8 @@
     text-align: center;
   }
   .pie-chart-container {
-    width: 50%; /* Default width for larger screens */
-    height: 300px; /* Default height */
+    width: 50% !important; /* Default width for larger screens */
+    height: 300px !important; /* Default height */
     margin: 0 auto;
   }
   

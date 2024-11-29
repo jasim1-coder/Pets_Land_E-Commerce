@@ -33,25 +33,32 @@ return (
     <nav className="navbar">
       <div className="navbar-logo">
         <img src={logo} alt="Pet Shop Logo" className="logo" />
-        <Link to="/" className="navbar-brand">Pet's Land</Link>
+        { !Admin ? (
+          <><Link to="/" className="navbar-brand">Pet's Land.</Link>
+          </>
+        ) : (
+        <><h4><strong>Pet's Land.</strong></h4>
+        </>
+        )}
       </div>
       <div className="navbar-center">
         {!Admin && (
-          <form className="search-form">
-          <input type="search" placeholder="Search for pet products..."
+          <form style={{justifyContent:"center"}} className="search-form">
+          <input style={{paddingLeft:"20px"}} type="search" placeholder="Search for pet products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button type="submit">🔍</button>
+          <div style={{justifyContent:"center",display:"flex"}}><button style={{justifyContent:"start",paddingRight:"30px"}} type="submit">search</button></div>
         </form>)}
 
       </div>
       <div className="navbar-right">
         {login ? (
           <>
-          <div >
-            <IoPersonCircle size={27} color="black"/>
-            <span className="user-name">{userName}</span>
+          <div className='username' ><div><IoPersonCircle size={27} color="black"/>
+          </div>
+          <div><span className="user-name">{userName}</span>
+          </div>
           </div>
           <button className="logout-button" onClick={handleLogout}>Logout</button>
         </>
@@ -61,15 +68,19 @@ return (
           </Link>
           
         )}
-        <Link to="/Order_Success" className="order-link">Orders</Link>
-        <Link to="/cart" className="nav-icon">
-        {cart.length > 0 && (
-          <div className="cart-length">
-            <span>{cart.length}</span>
-          </div>
+          {!Admin && (
+          <>
+            <Link to="/Order_Success" className="order-link">Orders</Link>
+            <Link to="/cart" className="nav-icon">
+              {cart.length > 0 && (
+                <div className="cart-length">
+                  <span>{cart.length}</span>
+                </div>
+              )}
+              <IoCart size={25} color="black" />
+            </Link>
+          </>
         )}
-        <IoCart size={25} color="black"/>
-      </Link>
       </div>
     </nav>
   );

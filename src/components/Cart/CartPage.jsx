@@ -27,7 +27,7 @@ function CartPage() {
     <div className="cart-page">
       <h2>Your Cart</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty!</p>
+        <p className='empty-cart'>Your cart is empty!</p>
       ) : (
         <div className="cart-items-container">
           {cart.map((product) => (
@@ -35,9 +35,9 @@ function CartPage() {
   <img src={product.image} alt={product.name} className="cart-item-image" />
   <div className="cart-item-details">
     <h3>{product.name}</h3>
-    <p>Price: ₹{product.price}</p>
-    <p>Quantity: {product.quantity}</p>
-    <p>Total: ₹{product.price * product.quantity}</p> {/* Calculate total price */}
+    <p><strong>Price: ₹</strong>{product.price}</p>
+    <p><strong>Quantity: </strong>{product.quantity}</p>
+    <p><strong>Total: ₹</strong>{product.price * product.quantity}</p> {/* Calculate total price */}
     
     <div className="cart-item-actions">
       <button className="action-btn" onClick={() => increaseQuantity(product.id)}>+</button>
@@ -47,7 +47,7 @@ function CartPage() {
   </div>
 </div>
       ))}
-          <div className="total"><p>Total Price: ₹{totalPrice}</p></div>
+          <div className="totall"><p>Total Price: ₹{totalPrice}</p></div>
           <button className="place-order-btn" onClick={handlePlaceOrder}>Buy Now</button>
         </div>
       )}

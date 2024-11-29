@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
-import { AdminContext } from "../../context/AdminContext";
-import Modal from "./Modal";
+import { AdminContext } from "../../../context/AdminContext";
+import Modal from "../Modals/Modal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./admin.css";
-
+import "./ManageProduct.css"
+import "../admin.css"
 const ManageProducts = () => {
-  const { products, deleteProduct, editProduct, addProduct } = useContext(AdminContext);
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const { products, deleteProduct, editProduct, addProduct, selectedCategory, updateCategory } = useContext(AdminContext);
   const [isEditing, setIsEditing] = useState(false);
   const [productData, setProductData] = useState({});
   const [modalType, setModalType] = useState(null);
@@ -22,6 +21,8 @@ const ManageProducts = () => {
     deleteProduct(id);
     toast.success("Product deleted successfully!");
   };
+
+
   const handleAddProduct = () => {
       setProductData({
       name: "",
@@ -39,45 +40,41 @@ const ManageProducts = () => {
   }
 
   const handleEditProduct = (product) => {
-    console.log("Edit button clicked", product); 
-    console.log("isModalOpen:", modalType); // Check if the function is being triggered
-
     setProductData(product); // Set the product data to be edited
     setIsEditing(true); // Mark as editing
     setModalType("edit"); // Open the modal
   };
+
+
 
   const handleCloseModal = () => {
     setModalType(null)
   }
 
   const handleSaveProduct = (updatedProduct) => {
-
     if(modalType === "add"){
       addProduct(productData)
       toast.success("Product added successfully!");
-
     }else if (modalType === "edit"){
       editProduct(updatedProduct.id, updatedProduct)
       toast.success("Product updated successfully!");
-      
     }
     handleCloseModal();
   };
 
   return (
-    <div className="handle-products">
+    <div className="">
       <h2>Admin Product Management</h2>
       <div className="filter-category">
         <label>Filter by Category:</label>
-        <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+        <select value={selectedCategory} onChange={(e) => updateCategory(e.target.value)}>
           <option value="all">All</option>
           <option value="dog">Dog</option>
           <option value="cat">Cat</option>
         </select>
       </div>
-      <div>
-        <button onClick={() => {handleAddProduct(productData)}}>Add Product</button>
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <button style={{width:"150px",borderRadius:"40px"}} onClick={() => handleAddProduct(productData)}>Add Product</button>
       </div>
       <div className="product-table-container">
         <table className="product-table">
@@ -104,8 +101,8 @@ const ManageProducts = () => {
                 <td>{product.stock}</td>
                 <td>{product.seller}</td>
                 <td>
-                  <button onClick={() => handleEditProduct(product)}>Edit</button>
-                  <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
+                  <button className="btn" style={{color:"white",backgroundColor:"blue"}} onClick={() => handleEditProduct(product)}>Edit</button>
+                 <div><button className="btn" style={{color:"white",backgroundColor:"red"}} onClick={() => handleDeleteProduct(product.id)}>Delete</button></div> 
                 </td>
               </tr>
             ))}

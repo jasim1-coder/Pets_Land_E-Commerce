@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { AdminContext } from "../../context/AdminContext"; // Adjust the import path based on your project structure
-import "./Navbar.css";
+import { AdminContext } from "../../../context/AdminContext"; // Adjust the import path based on your project structure
+import "../Navbar.css";
 import PieChart from "../PieChart/PieChart";
 
 const AdminDashboard = () => {
@@ -61,7 +61,7 @@ const AdminDashboard = () => {
           </div>
 
           {/* Top Selling Products */}
-          <h3>Top Selling Products</h3>
+          {/* <h3>Top Selling Products</h3>
           {topSellingProducts && topSellingProducts.length > 0 ? (
             <table className="table table-bordered">
               <thead>
@@ -85,7 +85,7 @@ const AdminDashboard = () => {
             </table>
           ) : (
             <p>No products available.</p>
-          )}
+          )} */}
 
           {/* Recent Orders */}
           <h3>Recent Orders</h3>

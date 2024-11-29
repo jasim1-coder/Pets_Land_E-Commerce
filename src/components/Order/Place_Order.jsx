@@ -71,29 +71,22 @@ function PlaceOrderPage() {
 
       // Add order to user's `Orders`
       const updatedUserOrders = [...user.order, order];
-      await axios.patch(`http://localhost:3000/users/${userId}`, { orders: updatedUserOrders });
+      await axios.patch(`http://localhost:3000/users/${userId}`, { order: updatedUserOrders });
 
-      // Add order to global `Orders`
-      // const ordersResponse = await axios.get('http://localhost:3000/Orders');
-      // const globalOrders = ordersResponse.data;
-
-      // const updatedGlobalOrders = [...globalOrders, order];
       await axios.post('http://localhost:3000/Orders', order);
 
       // Update product stock
-      await Promise.all(
-        cart.map(async item => {
-          const productResponse = await axios.get(`http://localhost:3000/product/${item.id}`);
-          const product = productResponse.data;
-
-          const updatedProduct = {
-            ...product,
-            stock: product.stock - item.quantity, // Reduce stock
-          };
-
-          await axios.put(`http://localhost:3000/product/${item.id}`, updatedProduct);
-        })
-      );
+      for (const item of cart) {
+        const productResponse = await axios.get(`http://localhost:3000/product/${item.id}`);
+        const product = productResponse.data;
+  
+        const updatedProduct = {
+          ...product,
+          stock: product.stock - item.quantity, // Reduce stock
+        };
+  
+        await axios.put(`http://localhost:3000/product/${item.id}`, updatedProduct);
+      }
 
       // Clear the cart
       await axios.patch(`http://localhost:3000/users/${userId}`, { cart: [] });

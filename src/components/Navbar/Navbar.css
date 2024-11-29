@@ -36,7 +36,12 @@
 .navbar-brand:hover {
   color: #FF6F61;
 }
-
+.username{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
 .search-form {
   display: flex;
   max-width: 400px;

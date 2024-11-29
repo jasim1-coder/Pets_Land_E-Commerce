@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./GlobalOrder.css"
 
 const GlobalOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -46,7 +47,9 @@ const GlobalOrders = () => {
                 <p><strong>Total Price:</strong> ₹{order.totalPrice}</p>
 
                 <h6>Items:</h6>
-                <ul className="list-group">
+                <div className="scrollable-list">
+                <ul className="list-group grp">
+
                   {order.items.map((item) => (
                     <li key={item.id} className="list-group-item d-flex align-items-center">
                       <img
@@ -64,6 +67,7 @@ const GlobalOrders = () => {
                     </li>
                   ))}
                 </ul>
+                </div>
               </div>
               <div className="card-footer text-center">
               </div>

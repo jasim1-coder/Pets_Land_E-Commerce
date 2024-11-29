@@ -1,5 +1,5 @@
 import React from "react";
-import "./admin.css";
+import "../admin.css";
 
 const Modal = ({ modalType,productData, setProductData, onSave, onClose }) => {
   const handleChange = (e) => {

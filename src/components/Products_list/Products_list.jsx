@@ -22,7 +22,7 @@ const ProductList = ({ selectedCategory}) => {
   }, []);
 
   const filteredProducts = products.filter((product) => {
-    const matchedCategory = selectedCategory ? product.category === selectedCategory : true ;
+    const matchedCategory = selectedCategory === "all" ? true : product.category === selectedCategory ;
     const matchedSearch =  search ? product.name.toLowerCase().includes(search.toLowerCase()) : true;
     return matchedCategory && matchedSearch;
   })

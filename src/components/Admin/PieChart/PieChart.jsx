@@ -53,11 +53,25 @@ function PieChart() {
               },
             ],
           };
+
+
+  const pieChartOptions = {
+    responsive: true,
+    animation: {
+      duration: 40, // Faster animation duration in milliseconds
+      easing: 'easeOutBounce', // Smooth animation
+    },
+    plugins: {
+      legend: {
+        position: 'top', // Move legend to the bottom
+      },
+    },
+  };
     
   return (
-    <div className="pie-chart-container" style={{ width: '50%', height: '500px' }}>
+    <div className="pie-chart-container" style={{ width: '60%', height: '600px' }}>
     <h2>Product Categories Distribution</h2>
-    <Pie data={pieChartData} /> </div>  )
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}><Pie data={pieChartData} options={pieChartOptions}/></div> </div>  )
 }
 
 export default PieChart

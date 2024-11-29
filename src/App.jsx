@@ -15,18 +15,19 @@ import OrderSuccessPage from "./components/Success_Page/Order_Success";
 import { Toaster } from "react-hot-toast";
 import { AdminContextProvider } from "./context/AdminContext";
 
-import ManageProducts from "./components/Admin/Manage_Product"; // Add this
+import ManageProducts from "./components/Admin/Product_Manage/Manage_Product"; // Add this
 
-import ManageUsers from "./components/Admin/Manage_Users"; // Add this
-import AdminDashboard from "./components/Admin/Admin_Home";
+import ManageUsers from "./components/Admin/User_Manage/Manage_Users"; // Add this
+import AdminDashboard from "./components/Admin/Dashbord/Admin_Home";
 import LayoutAdmin from "./components/AdminLayout.jsx/LayoutAdmin";
 import GlobalOrders from "./components/Admin/AllOrder/Order";
+import CartContextProvider from "./context/CartContext";
 
 function App() {
   return (
     <BrowserRouter>
       <AdminContextProvider>
-        <CartContext>
+        <CartContextProvider>
           <Toaster />
           <Routes>
             {/* Public Routes */}
@@ -48,7 +49,7 @@ function App() {
           <Route path="orders" element={<GlobalOrders />} />
         </Route>
           </Routes>
-        </CartContext>
+        </CartContextProvider>
       </AdminContextProvider>
     </BrowserRouter>
   );
