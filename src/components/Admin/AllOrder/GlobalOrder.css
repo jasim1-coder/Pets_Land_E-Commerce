@@ -1,24 +1,20 @@
-/* GlobalOrders.css */
-
 .card-order {
   margin-bottom: 20px;
 }
 
-/* Ensure all cards have the same height */
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Set consistent height for all cards */
+  height: 100%; 
 }
 
 .card-body {
   flex-grow: 1;
   padding: 15px;
 }
-
 .scrollable-list {
-  max-height: 150px; /* Limit the height of the list */
+  max-height: 150px; 
   overflow-y: auto;
   border: 1px solid #45607b;
   padding: 10px;

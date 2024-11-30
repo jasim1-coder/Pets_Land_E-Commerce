@@ -1,31 +1,16 @@
-import React, { useState,useEffect } from 'react'
-import axios from 'axios';
+import React, { useState,useEffect, useContext } from 'react'
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale } from 'chart.js';
 import "./PieChart.css"
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
-
+import { AdminContext } from '../../../context/AdminContext';
 
 function PieChart() {
+  const {products} = useContext(AdminContext)
+  const [categoryCounts, setCategoryCounts] = useState({ dog: 0, cat: 0 });
 
-    const [allProduct,setAllProduct] = useState([])
-    const [categoryCounts, setCategoryCounts] = useState({ dog: 0, cat: 0 });
-
-    useEffect(() => {
-        const fetchData = async () => {
-        try{
-           const response = await axios.get('http://localhost:3000/product')
-                setAllProduct(response.data)
-        }
-            catch(error){
-                console.error('There was an error fetching the products!', error);
-            };
-        };
-            fetchData()
-        },[]);
-
-        const calculateCategoryCounts = () => {
-            const counts = allProduct.reduce((acc, product) => {
+  const calculateCategoryCounts = () => {
+            const counts = products.reduce((acc, product) => {
               if (product.category === 'dog') {
                 acc.dog += 1;
               } else if (product.category === 'cat') {
@@ -33,37 +18,34 @@ function PieChart() {
               }
               return acc;
             }, { dog: 0, cat: 0 });
-        
             setCategoryCounts(counts); 
           };
 
           useEffect(() => {
-            if (allProduct.length > 0) {
+            if (products.length > 0) {
               calculateCategoryCounts();
             }
-          }, [allProduct]); 
+          }, [products]); 
 
           const pieChartData = {
-            labels: ['Dog', 'Cat'], // Category labels
+            labels: ['Dog', 'Cat'], 
             datasets: [
               {
-                data: [categoryCounts.dog, categoryCounts.cat], // Category counts
-                backgroundColor: ['#FF6384', '#36A2EB'], // Colors for the chart
+                data: [categoryCounts.dog, categoryCounts.cat], 
+                backgroundColor: ['#FF6384', '#36A2EB'],
                 hoverBackgroundColor: ['#FF6384', '#36A2EB'],
               },
             ],
           };
-
-
   const pieChartOptions = {
     responsive: true,
     animation: {
-      duration: 40, // Faster animation duration in milliseconds
-      easing: 'easeOutBounce', // Smooth animation
+      duration: 40, 
+      easing: 'easeOutBounce', 
     },
     plugins: {
       legend: {
-        position: 'top', // Move legend to the bottom
+        position: 'top',
       },
     },
   };

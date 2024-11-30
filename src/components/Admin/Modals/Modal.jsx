@@ -1,24 +1,31 @@
 import React from "react";
-import "../admin.css";
+import "./Modal1.css";
+import toast from 'react-hot-toast';
 
-const Modal = ({ modalType,productData, setProductData, onSave, onClose }) => {
+
+const Modal = ({ modalType, productData, setProductData, onSave, onClose }) => {
+  
   const handleChange = (e) => {
+
     const { name, value } = e.target;
+    
     if(["price", "oldPrice", "stock"].includes(name)){
       setProductData((prev) => ({...prev, [name]: parseInt(value)}))
     }
+
     else if(name === "ingredients"){
         setProductData((prev) => ({...prev, [name]: value.split(",").map((item) => item.trim())}))
-    }else{
+    }
+    else{
     setProductData((prev) => ({ ...prev, [name]: value }));
   }};
 
+
   const handleSave = () => {
-    // Ensure valid product data is passed
     if (productData.name && productData.category && productData.price && productData.stock && productData.seller && productData.ingredients && productData.image && productData.description) {
-      onSave(productData); // Pass updated product data to onSave function
+      onSave(productData); 
     } else {
-      alert("Please fill all fields!");
+      toast.error("Please fill all fields!");
     }
   };
 

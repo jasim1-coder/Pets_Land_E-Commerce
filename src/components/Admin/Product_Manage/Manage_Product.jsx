@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./ManageProduct.css"
 import "../admin.css"
+
 const ManageProducts = () => {
   const { products, deleteProduct, editProduct, addProduct, selectedCategory, updateCategory } = useContext(AdminContext);
   const [isEditing, setIsEditing] = useState(false);
@@ -13,8 +14,7 @@ const ManageProducts = () => {
   
 
   const filteredProducts =
-    selectedCategory === "all"
-      ? products
+    selectedCategory === "all" ? products
       : products.filter((product) => product.category === selectedCategory);
 
   const handleDeleteProduct = (id) => {
@@ -24,8 +24,7 @@ const ManageProducts = () => {
 
 
   const handleAddProduct = () => {
-      setProductData({
-      name: "",
+      setProductData({name: "",
       category: "",
       price: "",
       oldPrice:"",
@@ -40,9 +39,9 @@ const ManageProducts = () => {
   }
 
   const handleEditProduct = (product) => {
-    setProductData(product); // Set the product data to be edited
-    setIsEditing(true); // Mark as editing
-    setModalType("edit"); // Open the modal
+    setProductData(product); 
+    setIsEditing(true);
+    setModalType("edit");
   };
 
 
@@ -74,7 +73,7 @@ const ManageProducts = () => {
         </select>
       </div>
       <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-        <button style={{width:"150px",borderRadius:"40px"}} onClick={() => handleAddProduct(productData)}>Add Product</button>
+        <button style={{width:"150px",borderRadius:"40px"}} onClick={() => handleAddProduct()}>Add Product</button>
       </div>
       <div className="product-table-container">
         <table className="product-table">

@@ -1,35 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import "./GlobalOrder.css"
+import { AdminContext } from '../../../context/AdminContext';
 
 const GlobalOrders = () => {
-  const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/Orders'); 
-        setOrders(response.data);
-        setLoading(false);
-      } catch (error) {
-        setError('Failed to fetch orders. Please try again later.');
-        setLoading(false); 
-      }
-    };
-
-    fetchOrders();
-  }, []);
-
-  if (loading) {
-    return <div className="text-center my-5">Loading orders...</div>;
-  }
-
-  if (error) {
-    return <div className="text-center text-danger my-5">{error}</div>;
-  }
-
+  const {orders} = useContext(AdminContext);
   return (
       <div className="row">
         <div><h2>All Orders</h2></div>

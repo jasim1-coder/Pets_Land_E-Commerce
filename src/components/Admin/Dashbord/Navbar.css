@@ -1,4 +1,3 @@
-/* Custom Sidebar Styles */
 #sidebar {
     background-color: #f8f9fa;
     padding-top: 20px;
@@ -27,7 +26,6 @@
     color: white;
   }
   
-  /* Custom Header Styles */
   h2 {
     font-size: 2rem;
     font-weight: 600;
@@ -41,7 +39,6 @@
     color: #333;
   }
   
-  /* Dashboard Cards */
   .card {
     border-radius: 10px;
     overflow: hidden;
@@ -64,37 +61,36 @@
   
   /* Table Styles */
   .table {
-    margin-top: 20px;
-    border-radius: 8px;
-    overflow: hidden;
+    margin-top: 20px !important;
+    border-radius: 8px ;
+    overflow: hidden !important;
   }
   
   .table-bordered {
-    border: 1px solid #dee2e6;
+    border: 1px solid #dee2e6 !important;
   }
   
   .table th, .table td {
-    vertical-align: middle;
-    padding: 15px;
+    vertical-align: middle !important;
+    padding: 15px !important;
   }
   
   .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9 !important;
   }
   
   .table th {
-    background-color: #007bff;
-    color: white;
-    font-weight: 600;
+    background-color: #007bff !important;
+    color: white !important;
+    font-weight: 600 !important;
   }
   
   .table td {
-    color: #495057;
+    color: #495057 !important;
   }
   
-  /* Margin Adjustments for Main Content */
   .main-content {
-    margin-left: 240px; /* Make space for the sidebar */
+    margin-left: 240px; 
     padding: 30px;
   }
 
@@ -103,8 +99,47 @@
     overflow-y: auto;
     
   }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
   
-  /* Responsive Design: Smaller Screens */
+  .table thead tr {
+    background-color: #f4f4f4;
+  }
+  
+  .table th, .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    font-weight: bold;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table-bordered {
+    border: 1px solid #ddd;
+  }
+  
+  .table p {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+  
+  
   @media (max-width: 992px) {
     #sidebar {
       position: absolute;
@@ -128,7 +163,6 @@
     }
   }
   
-  /* Add space between elements */
   .mb-3 {
     margin-bottom: 1.5rem !important;
   }
@@ -141,7 +175,6 @@
     margin-top: 2rem !important;
   }
   
-  /* Other Utilities */
   .text-muted {
     font-size: 1rem;
     color: #6c757d;

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import './ManageUser.css'; // Import custom styles
+import './ManageUser.css'; 
 import Modal from "../Modals/Modal1";
 import { AdminContext } from '../../../context/AdminContext';
 
@@ -10,20 +10,7 @@ const ManageUsers = () => {
   const [isOrderModalOpen, setOrderModalOpen] = useState(false);
   const [orderModalContent, setOrderModalContent] = useState([]);
 
-  const {deleteUser,users,setUsers,blockUser} = useContext(AdminContext)
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/users');
-        setUsers(response.data);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
-
-    fetchUsers();
-  }, []);
+  const {deleteUser,users,blockUser} = useContext(AdminContext)
 
   const handleOpenCartModal = async (id) => {
     try {
@@ -62,7 +49,7 @@ const ManageUsers = () => {
 
   const handleDelete = async (id) => {
     try {
-      deleteUser(id); // Use deleteUser from context
+      deleteUser(id); 
     } catch (error) {
       console.error('Error deleting user:', error);
     }
@@ -126,19 +113,19 @@ const ManageUsers = () => {
                   >
                     {user.blocked ? 'Unblock' : 'Block'}
                   </button>
-                  <button
+                  {/* <button
                     onClick={() => handleDelete(user.id)}
                     className="btn btn-danger btn-sm ml-2"
                   >
                     Delete
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
+{/* cart modal */}
       <Modal isOpen={isCartModalOpen} onClose={handleCloseCartModal}>
   {cartModalContent.length > 0 ? (
     <div className="container py-3">
@@ -147,11 +134,7 @@ const ManageUsers = () => {
         <div key={item.id} className="border p-4 mb-4 rounded shadow-sm">
           <div className="d-flex align-items-center">
             <img
-              src={item.image}
-              alt={item.title}
-              className="img-fluid rounded me-3"
-              style={{ maxWidth: '80px' }}
-            />
+              src={item.image} alt={item.title} lassName="img-fluid rounded me-3" style={{ maxWidth: '80px' }}/>
             <div>
               <h5 className="mb-1">{item.name}</h5>
               <p className="mb-1">
@@ -172,8 +155,7 @@ const ManageUsers = () => {
     <p className="text-center text-danger">No items in the cart.</p>
   )}
 </Modal>
-
-      {/* Order Modal */}
+{/* order modal   */}
       <Modal isOpen={isOrderModalOpen} onClose={handleCloseOrderModal}>
   {orderModalContent.length > 0 ? (
     <div className="container py-3">

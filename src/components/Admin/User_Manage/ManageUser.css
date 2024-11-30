@@ -46,4 +46,41 @@
   .user-details li {
     margin-bottom: 10px;
   }
-  
+  /* Media Query for Phones */
+@media (max-width: 768px) {
+  .admin-users {
+    padding: 10px;
+  }
+
+  .user-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .user-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .user-card .btn {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .user-details {
+    padding: 15px;
+  }
+
+  .user-details h3,
+  .user-details h4 {
+    font-size: 1.2rem;
+  }
+
+  .user-details ul {
+    margin-top: 10px;
+  }
+
+  .user-details li {
+    font-size: 0.9rem;
+  }
+}

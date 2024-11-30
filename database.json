@@ -46,7 +46,7 @@
       "email": "naseef@gmail.com",
       "password": "naseef123",
       "confirmPassword": "naseef123",
-      "blocked": true,
+      "blocked": false,
       "cart": [
         {
           "id": "4",
@@ -131,7 +131,7 @@
       "email": "ajith@gmail.com",
       "password": "ajith123",
       "confirmPassword": "ajith123",
-      "blocked": true,
+      "blocked": false,
       "cart": [
         {
           "id": "6",
@@ -387,11 +387,21 @@
       ]
     },
     {
-      "id": "148e",
-      "name": "basil",
-      "email": "basil@gmail.com",
-      "password": "basil123",
-      "confirmPassword": "basil123",
+      "id": "211e",
+      "name": "athif",
+      "email": "athif@gmail.com",
+      "password": "athif123",
+      "confirmPassword": "athif123",
+      "blocked": false,
+      "cart": [],
+      "order": []
+    },
+    {
+      "id": "a8a3",
+      "name": "yasir",
+      "email": "yasir@gmail.com",
+      "password": "yasir123",
+      "confirmPassword": "yasir123",
       "blocked": false,
       "cart": [],
       "order": []
@@ -580,27 +590,6 @@
         "Calcium carbonate",
         "Potassium chloride",
         "Salt",
-        "Taurine"
-      ]
-    },
-    {
-      "id": "14",
-      "name": "Barking Good Dog Food",
-      "price": 462,
-      "oldPrice": 694,
-      "image": "https://target.scene7.com/is/image/Target/GUEST_67eebac4-c000-4cb7-b04c-325d008c55d9?wid=400&hei=400&qlt=80&fmt=webp",
-      "category": "dog",
-      "seller": "Animal Kingdom",
-      "stock": 55,
-      "description": "Barking Good Dog Food is designed for dogs of all breeds and sizes. Packed with high-quality proteins and wholesome grains, it supports energy levels and overall health.",
-      "ingredients": [
-        "Chicken meal",
-        "Whole grain barley",
-        "Brown rice",
-        "Beet pulp",
-        "Chicken fat (preserved with mixed tocopherols)",
-        "Natural flavors",
-        "Vitamins and minerals",
         "Taurine"
       ]
     },
@@ -941,6 +930,22 @@
       ],
       "image": "https://target.scene7.com/is/image/Target/GUEST_7b18f7fd-69c3-488f-87aa-64fd9a1254cf?wid=488&hei=488&fmt=pjpeg",
       "description": "Blue Buffalo Tastefuls Sensitive Stomach Cat Food is a delicious dry cat food with real chicken as the first ingredient. A great choice for Pet Parents who want to prioritize natural ingredients while pleasing picky palates"
+    },
+    {
+      "id": "63c2",
+      "name": "HUFT Cat Mahi Mahi Fish Crunchies",
+      "category": "cat",
+      "price": 799,
+      "oldPrice": 850,
+      "stock": 50,
+      "seller": "Huft",
+      "ingredients": [
+        "Mahi",
+        "Mahi Fish",
+        "Fillet"
+      ],
+      "image": "https://headsupfortails.com/cdn/shop/products/cattreatMahiMahi.jpg?v=1655703540&width=493",
+      "description": "A low calorie, single ingredient treat for cats, the HUFT Mahi-Mahi fish treats are excellent rewards for felines. They are high in protein and low in saturated fats. These are boneless fillets that are just dehydrated so your cat can have all the natural nutrients and flavor of the fish."
     }
   ],
   "Orders": [
