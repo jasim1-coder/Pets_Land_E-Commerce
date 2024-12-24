@@ -29,7 +29,7 @@ function Login_Page() {
       // Admin Login
       const admin = users.find(
         (user) =>
-          user.email.toLowerCase() === values.email.toLowerCase() && user.role === 'admin'
+          user.email.toLowerCase() === values.email.toLowerCase() && user.password === values.password && user.role === 'admin'
       );
 
       if (admin) {

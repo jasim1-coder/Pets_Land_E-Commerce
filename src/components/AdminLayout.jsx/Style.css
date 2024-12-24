@@ -1,11 +1,10 @@
-/* styles.css */
 .container-fluid {
     margin-top: 20px;
   }
   
   .sidebar {
-    background-color: #f8f9fa; /* Light background color */
-    height: 85vh; /* Full height */
+    background-color: #f8f9fa; 
+    height: 85vh;
     padding: 10px;
   }
   
@@ -23,34 +22,34 @@
   }
   .nav-link:hover{
     background-color: #007bff; 
-    color: #f8f9fa;/* Change text color on hover */
+    color: #f8f9fa;
   }
   @media (max-width: 768px) {
     .sidebar {
-      width: 200px; /* Adjust width for smaller screens */
+      width: 200px; 
     }
   
     .sidebar ul li a {
-      font-size: 14px; /* Smaller font */
+      font-size: 14px; 
     }
   }
   
   @media (max-width: 576px) {
     .sidebar {
-      width: 100%; /* Full width on small screens */
-      height: auto; /* Auto height */
-      position: relative; /* Position relative for stacking */
+      width: 100%; 
+      height: auto; 
+      position: relative; 
     }
   
     .sidebar ul {
-      display: flex; /* Horizontal list for small screens */
+      display: flex; 
       flex-wrap: wrap;
       justify-content: center;
     }
   
     .sidebar ul li {
       margin-bottom: 5px;
-      flex: 1 1 auto; /* Flex behavior */
+      flex: 1 1 auto; 
     }
   
     .sidebar ul li a {

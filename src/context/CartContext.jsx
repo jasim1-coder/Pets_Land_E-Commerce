@@ -70,10 +70,8 @@ function CartContextProvider({ children }) {
     if (!userId) return;
   
     try {
-      // Fetch user data
       const response = await axios.get(`http://localhost:3000/users/${userId}`);
       const user = response.data;
-  
       const productIndex = user.cart.findIndex((item) => item.id === productId);
   
       if (productIndex >= 0) {

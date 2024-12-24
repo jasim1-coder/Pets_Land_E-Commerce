@@ -13,7 +13,7 @@ import PlaceOrderPage from "./components/Order/Place_Order";
 import OrderSuccessPage from "./components/Success_Page/Order_Success";
 
 import { Toaster } from "react-hot-toast";
-import { AdminContextProvider } from "./context/AdminContext";
+import  AdminContextProvider  from "./context/AdminContext";
 
 import ManageProducts from "./components/Admin/Product_Manage/Manage_Product"; // Add this
 

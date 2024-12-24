@@ -9,14 +9,12 @@ function LayoutAdmin() {
   return (
     <>
       <Navbar />
-      <div className="container-fluid m-0">
         <div className="row">
           <Sidebar />
           <main className="col-md-9 ms-sm-auto col-lg-10 px-4 home1">
             <Outlet />
           </main>
         </div>
-      </div>
       <Footer />
     </>
   );

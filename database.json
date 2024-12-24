@@ -122,6 +122,33 @@
             }
           ],
           "totalPrice": 1871
+        },
+        {
+          "orderId": 1732956735661,
+          "userId": "2051",
+          "usrName": "adithyan",
+          "timestamp": "2024-11-30T08:52:15.661Z",
+          "address": "adithyan House kozhikode, calicut, kerala, 987654",
+          "paymentMethod": "creditCard",
+          "items": [
+            {
+              "id": "4",
+              "image": "https://target.scene7.com/is/image/Target/GUEST_4a092f52-7ce1-41f5-b15e-80db6f9e38c5?wid=400&hei=400&qlt=80&fmt=webp",
+              "name": "Purrfect Paws Cat Food for free",
+              "quantity": 1,
+              "price": 311,
+              "total": 311
+            },
+            {
+              "id": "9",
+              "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
+              "name": "Whiskers' Favorite Cat Munch",
+              "quantity": 1,
+              "price": 259,
+              "total": 259
+            }
+          ],
+          "totalPrice": 570
         }
       ]
     },
@@ -179,6 +206,29 @@
             "Brown rice",
             "Dried egg product",
             "Flaxseed"
+          ],
+          "quantity": 1
+        },
+        {
+          "id": "16",
+          "name": "Canine Cuisine Dog Food",
+          "price": 275,
+          "oldPrice": 413,
+          "image": "https://petcuisine.co.za/wp-content/uploads/2021/04/canine_cuisine_puppy_2.jpg",
+          "category": "dog",
+          "seller": "Pet Supplies",
+          "stock": 58,
+          "description": "Canine Cuisine Dog Food offers a gourmet experience for your pet, made with real meat and wholesome ingredients for a balanced diet.",
+          "ingredients": [
+            "Beef meal",
+            "Brown rice",
+            "Barley",
+            "Chicken fat (preserved with mixed tocopherols)",
+            "Dried egg product",
+            "Carrots",
+            "Peas",
+            "Vitamins and minerals",
+            "Taurine"
           ],
           "quantity": 1
         }
@@ -412,11 +462,11 @@
       "id": "4",
       "name": "Purrfect Paws Cat Food for free",
       "price": 311,
-      "oldPrice": 467,
+      "oldPrice": 4000000,
       "image": "https://target.scene7.com/is/image/Target/GUEST_4a092f52-7ce1-41f5-b15e-80db6f9e38c5?wid=400&hei=400&qlt=80&fmt=webp",
       "category": "cat",
       "seller": "Pet Supplies",
-      "stock": 4,
+      "stock": 3,
       "description": "Purrfect Paws Cat Food is designed to provide your feline friend with the nutrition they need. This formula includes high-quality proteins to support muscle development.",
       "ingredients": [
         "Turkey meal",
@@ -424,42 +474,6 @@
         "Peas",
         "Salmon oil",
         "Vitamins"
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Happy Tails Cat Delight",
-      "price": 646,
-      "oldPrice": 969,
-      "image": "https://headsupfortails.com/cdn/shop/products/cattreatcrunchies_1.jpg?v=1655703561&width=533",
-      "category": "cat",
-      "seller": "Happy Pets",
-      "stock": 46,
-      "description": "Happy Tails Cat Delight is a gourmet food that provides complete nutrition while satisfying your cat's taste buds. Each bite is full of flavor and essential nutrients.",
-      "ingredients": [
-        "Chicken meal",
-        "Fish meal",
-        "Brown rice",
-        "Dried egg product",
-        "Flaxseed"
-      ]
-    },
-    {
-      "id": "6",
-      "name": "Kitty Krunch Gourmet Cat Food",
-      "price": 785,
-      "oldPrice": 1178,
-      "image": "https://naturallyforpets.com/wp-content/uploads/2019/12/KitCat-Kitty-Crunch-Beef-Flavor-1.jpg",
-      "category": "cat",
-      "seller": "Cat Haven",
-      "stock": 7,
-      "description": "Kitty Krunch Gourmet Cat Food is crafted with premium ingredients to support your cat's health and vitality. This formula is rich in proteins and omega fatty acids.",
-      "ingredients": [
-        "Chicken meal",
-        "Rice",
-        "Oats",
-        "Peas",
-        "Salmon oil"
       ]
     },
     {
@@ -506,7 +520,7 @@
       "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
       "category": "cat",
       "seller": "Feline Friends",
-      "stock": 56,
+      "stock": 55,
       "description": "Whiskers' Favorite Cat Munch is a tasty treat that your cat will adore. Made from high-quality ingredients, these munchies are both delicious and nutritious.",
       "ingredients": [
         "Chicken meal",
@@ -878,7 +892,7 @@
         "Minerals",
         "Vitamins"
       ],
-      "image": "https://m.media-amazon.com/images/I/41IS--bWAzL._SX300_SY300_QL70_FMwebp_.jpg",
+      "image": "https://headsupfortails.com/cdn/shop/files/Adult-GrainZero-1-2kg-Front-3.jpg?v=1690200635&width=493",
       "description": "Essential vitamins and minerals added in the diet provides all the required micronutrients and helps in the recovery process"
     },
     {
@@ -1360,6 +1374,34 @@
         }
       ],
       "totalPrice": 1096
+    },
+    {
+      "id": "bbea",
+      "orderId": 1732956735661,
+      "userId": "2051",
+      "usrName": "adithyan",
+      "timestamp": "2024-11-30T08:52:15.661Z",
+      "address": "adithyan House kozhikode, calicut, kerala, 987654",
+      "paymentMethod": "creditCard",
+      "items": [
+        {
+          "id": "4",
+          "image": "https://target.scene7.com/is/image/Target/GUEST_4a092f52-7ce1-41f5-b15e-80db6f9e38c5?wid=400&hei=400&qlt=80&fmt=webp",
+          "name": "Purrfect Paws Cat Food for free",
+          "quantity": 1,
+          "price": 311,
+          "total": 311
+        },
+        {
+          "id": "9",
+          "image": "https://www.kreizenpets.com/cdn/shop/files/munchy-chomps-11-in-1-munch-multivitamin-31702165028906.png?v=1725650308&width=1500",
+          "name": "Whiskers' Favorite Cat Munch",
+          "quantity": 1,
+          "price": 259,
+          "total": 259
+        }
+      ],
+      "totalPrice": 570
     }
   ]
 }

@@ -20,9 +20,7 @@ function Home() {
     return () => clearInterval(interval); 
   }, []);
 
-const handleCategory = (category) => {
-  updateCategory(category)
-}
+
 
   return (
     <div className="home">
@@ -32,11 +30,11 @@ const handleCategory = (category) => {
       </div>
       <div className="categories">
         <div
-          className="category-card" onClick={() => handleCategory("dog")} style={{ backgroundImage: `url("https://img.freepik.com/premium-photo/close-up-portrait-dog-against-clear-sky_1048944-21764405.jpg?w=740")`
+          className="category-card" onClick={() => updateCategory("dog")} style={{ backgroundImage: `url("https://img.freepik.com/premium-photo/close-up-portrait-dog-against-clear-sky_1048944-21764405.jpg?w=740")`
           }} >Dogs</div>
-        <div className="category-card" onClick={() => handleCategory("cat")} style={{ backgroundImage: `url("https://img.freepik.com/premium-photo/cat-with-yellow-background-that-sayscat_670382-24884.jpg")`
+        <div className="category-card" onClick={() => updateCategory("cat")} style={{ backgroundImage: `url("https://img.freepik.com/premium-photo/cat-with-yellow-background-that-sayscat_670382-24884.jpg")`
           }} >Cats</div>
-          <div className="category-card" onClick={() => handleCategory("all")} style={{backgroundImage: `url(https://www.shutterstock.com/image-photo/portrait-cat-dog-front-bright-600nw-1927527212.jpg)`}}>Dog & Cat</div>
+          <div className="category-card" onClick={() => updateCategory("all")} style={{backgroundImage: `url(https://www.shutterstock.com/image-photo/portrait-cat-dog-front-bright-600nw-1927527212.jpg)`}}>Dog & Cat</div>
       </div>
 
       <ProductList selectedCategory={selectedCategory || "all"} />

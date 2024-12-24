@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 export const AdminContext = createContext();
 
-export const AdminContextProvider = ({ children }) => {
+const AdminContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -67,31 +67,14 @@ export const AdminContextProvider = ({ children }) => {
 
 
   useEffect(() => {
-    // Update count of products, users, or orders change
     setTotalUsers(users.length);
     setTotalProducts(products.length);
     setTotalOrders(orders.length);
 
-    // Calculate total revenue
     const revenue = orders.reduce((total, order) => total + (order.totalPrice || 0), 0);
     setTotalRevenue(revenue);
 
-    // Find top-selling products based on quantity ordered
-    const productSales = products.map(product => ({
-      ...product,
-      quantitySold: orders.reduce(
-        (quantity, order) => quantity + (order.items.find(p => p.id === product.id)?.quantity || 0),
-        0
-      )
-    }));
-
-
-
-    
-    const sortedTopSelling = productSales.sort((a, b) => b.quantitySold - a.quantitySold).slice(0, 5);  // Top 5 selling products
-    setTopSellingProducts(sortedTopSelling);
-
-    // Get recent orders (latest 5 orders)
+    // Get recent 5 orders 
     const sortedOrder = orders.slice(-5);
     setRecentOrders(sortedOrder);
   }, [users, products, orders]);
@@ -177,7 +160,7 @@ export const AdminContextProvider = ({ children }) => {
     </AdminContext.Provider>
   );
 };
-
+export default AdminContextProvider
 // Custom hook to use AdminContext
 // export const useAdminContext = () => {
 //   return useContext(AdminContext);

@@ -9,6 +9,8 @@ const ManageUsers = () => {
   const [cartModalContent, setCartModalContent] = useState([]);
   const [isOrderModalOpen, setOrderModalOpen] = useState(false);
   const [orderModalContent, setOrderModalContent] = useState([]);
+  const [isDetailModalOpen, setDetailModalOpen] = useState(false);
+  const [detailModalContent, setDetailModalContent] = useState([]);
 
   const {deleteUser,users,blockUser} = useContext(AdminContext)
 
@@ -34,6 +36,17 @@ const ManageUsers = () => {
       console.error('Error fetching user orders:', error);
     }
   };
+  const handleDetailModalOpen = async (id) => {
+    try{
+      const response = await axios.get(`http://localhost:3000/users/${id}`);
+      const user = response.data;
+      setDetailModalOpen(true)
+      setDetailModalContent(user)
+    }catch(error){
+      console.error('Error fetching user details:', error);
+
+    }
+  }
 
   const handleCloseCartModal = () => {
     setCartModalOpen(false);
@@ -43,6 +56,10 @@ const ManageUsers = () => {
   const handleCloseOrderModal = () => {
     setOrderModalOpen(false);
     setOrderModalContent([]);
+  };
+  const handleCloseDetailModal = () => {
+    setDetailModalOpen(false);
+    setDetailModalContent([]);
   };
 
  
@@ -67,6 +84,7 @@ const ManageUsers = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Status</th>
+              <th>Details</th>
               <th>Order History</th>
               <th>Cart Items</th>
               <th>Actions</th>
@@ -81,6 +99,9 @@ const ManageUsers = () => {
                   <span className={`badge ${user.blocked ? 'bg-danger' : 'bg-success'}`}>
                     {user.blocked ? 'Blocked' : 'Active'}
                   </span>
+                </td>
+                <td>
+                  <button className='btn-info btn' onClick={()=>handleDetailModalOpen(user.id)}>View Details</button>
                 </td>
                 <td>
                   {user.order && user.order.length > 0 ? (
@@ -191,6 +212,24 @@ const ManageUsers = () => {
   )}
 
 </Modal>
+
+<Modal isOpen={isDetailModalOpen} onClose={handleCloseDetailModal}>
+  {detailModalContent ? (
+    <div className="container py-3">
+      <div><h2>User Details</h2></div>
+          <p><strong className="fw-bold">Name: </strong> {detailModalContent.name}</p>
+          <p><strong className="fw-bold">Id: </strong> {detailModalContent.id}</p>
+          <p><strong className="fw-bold">E-mail: </strong> {detailModalContent.email}</p>
+          <p><strong className="fw-bold">Cart Quantity: </strong> {detailModalContent.cart?.length || 0}</p>
+          <p><strong className="fw-bold">Number of Orders:</strong> {detailModalContent.order?.length || 0}</p>
+
+
+    </div>
+  ) : (
+    <p className="text-center text-danger">No Details found.</p>
+  )}
+</Modal>
+
 
     </div>
   );
