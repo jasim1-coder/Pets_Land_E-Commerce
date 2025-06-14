@@ -28,4 +28,4 @@ Pet Land is an interactive web application designed for pet lovers to explore, m
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/pet-land.git
+   git clone https://github.com/jasim1-coder/pet-land.git
